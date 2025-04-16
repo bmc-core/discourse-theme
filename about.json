@@ -1,0 +1,29 @@
+{
+  "name": "BMCCore theme",
+  "component": false,
+  "license_url": null,
+  "about_url": null,
+  "authors": null,
+  "theme_version": null,
+  "minimum_discourse_version": null,
+  "maximum_discourse_version": null,
+  "assets": {},
+  "color_schemes": {
+    "Jabil Color Plette Dark": {
+      "primary": "f1f2f2",
+      "secondary": "212121",
+      "tertiary": "15bef0",
+      "quaternary": "0990cf",
+      "header_background": "031221",
+      "header_primary": "f1f2f2",
+      "highlight": "84bd00",
+      "selected": "052e3d",
+      "hover": "005288",
+      "danger": "ffc000",
+      "success": "94e641",
+      "love": "fd636b"
+    }
+  },
+  "modifiers": {},
+  "learn_more": "https://meta.discourse.org/t/beginners-guide-to-using-discourse-themes/91966"
+}
