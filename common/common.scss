@@ -393,11 +393,16 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 }
 
 /*首頁Welcome文字隱藏+Logo*/
-.welcome-banner__wrap h1 {
+
+/*.welcome-banner__wrap h1 {
+    font-size:0px;
+}*/
+
+.custom-search-banner-wrap h1 {
     font-size:0px;
 }
 
-.welcome-banner__title {
+.custom-search-bannerr__title {
     display:flex;
     width: 1000px;      
     height: 80px;     
@@ -407,6 +412,18 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     max-width: 250px;
     margin-inline: auto;
 }
+
+/*
+.welcome-banner__title {
+    display:flex;
+    width: 1000px;      
+    height: 80px;     
+    background-image:url("https://i.imgur.com/agfch4E.png"); 
+    background-size:250px 43px;
+    background-repeat:no-repeat;
+    max-width: 250px;
+    margin-inline: auto;
+}*/
 
 /*----------------分隔線--------------------*/
 
