@@ -67,5 +67,16 @@ function interpolateColor(color1, color2, factor) {
     }
 }
 
+//該改Category Topic欄目的文字
+document.addEventListener('DOMContentLoaded', function() {
+  const units = document.querySelectorAll('.category-list .topics .unit');
+  units.forEach(unit => {
+    // 這裡可以修改顯示的文字內容
+    unit.textContent = unit.textContent.replace("week", "w");
+  });
+});
+
+
+
 
 });
