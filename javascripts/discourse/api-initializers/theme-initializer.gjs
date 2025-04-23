@@ -68,7 +68,6 @@ function interpolateColor(color1, color2, factor) {
 }
 
 //該改Category Topic欄目的文字
-<script type="text/discourse-plugin" version="0.8">
   function replaceWeekText() {
     const elements = document.querySelectorAll('.category-list .topics .unit');
     elements.forEach(el => {
@@ -82,7 +81,6 @@ function interpolateColor(color1, color2, factor) {
   api.onPageChange(() => {
     replaceWeekText();
   });
-</script>
 
 
 
