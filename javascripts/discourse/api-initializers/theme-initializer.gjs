@@ -76,7 +76,13 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
-
+// 每次導航時自動執行一次
+api.onPageChange((url, title) => {
+  const units = document.querySelectorAll('.category-list .topics .unit');
+  units.forEach(unit => {
+    unit.textContent = unit.textContent.replace("week", "w");
+  });
+});
 
 
 });
