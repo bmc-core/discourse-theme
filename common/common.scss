@@ -83,21 +83,24 @@ a.tag-topics__topic-link {
     --danger-hover: #FFF0AC;
 }
 
+.wrap {
+    max-width: 75vw;
+}
+
 #main-outlet-wrapper {
     /*背景半透明*/
     background:rgba(0,0,0,0.5);
-    padding: 2em;
-    padding-right: 5%;
-    padding-left: 5%;
-    max-width: 1280px; /* 設定更大的最大寬度 */
+    padding: 2em 5%; // 簡化 padding-right/left
+    max-width: 75vw; /* 設定隨螢幕大小變更占比 */
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .admin-content .admin-contents {
     /*背景半透明*/
     background:rgba(0,48,96,0.1);
-    padding: 2em;
-    padding-right: 5%;
-    padding-left: 5%;
+    padding: 2em 5%; // 簡化 padding-right/left
 }
 
 .admin-area .sidebar-wrapper .admin-panel {
@@ -234,14 +237,14 @@ button#create-category {
     -webkit-appearance: none;
     appearance: none;
     position: relative;
-    display:  inline-block;
+   // display:  inline-block;
     align-items: center;
     justify-content: center;
     width: 20px;
-    height: 20px;
+    //height: 20px;
     padding: .2143em;
-    margin-left: 5px;    /*  左方外距 18px  */
-    margin-right: 5px;   /*  右方外距 18px  */
+    margin-left: 5px;
+    margin-right: 5px;
     text-decoration: none;
     cursor: pointer;
     border: 1px solid rgba(0, 0, 0, 0);
