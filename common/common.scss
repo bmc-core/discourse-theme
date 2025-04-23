@@ -85,6 +85,7 @@ a.tag-topics__topic-link {
 
 .wrap {
     max-width: 75vw;
+    padding: 2em 5%; // 簡化 padding-right/left
 }
 
 #main-outlet-wrapper {
@@ -730,4 +731,8 @@ table th {
 
 .settings .setting .setting-value .uploaded-image-preview {
     background-color: transparent;
+}
+
+.dashboard-next .charts .chart-canvas {
+    width: 100%;
 }
