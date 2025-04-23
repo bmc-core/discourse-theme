@@ -68,21 +68,22 @@ function interpolateColor(color1, color2, factor) {
 }
 
 //該改Category Topic欄目的文字
-document.addEventListener('DOMContentLoaded', function() {
-  const units = document.querySelectorAll('.category-list .topics .unit');
-  units.forEach(unit => {
-    // 這裡可以修改顯示的文字內容
-    unit.textContent = unit.textContent.replace("week", "w");
-  });
-});
+<script type="text/discourse-plugin" version="0.8">
+  function replaceWeekText() {
+    const elements = document.querySelectorAll('.category-list .topics .unit');
+    elements.forEach(el => {
+      if (el.textContent.includes('/ week')) {
+        el.textContent = el.textContent.replace('week', 'W');
+      }
+    });
+  }
 
-// 每次導航時自動執行一次
-api.onPageChange((url, title) => {
-  const units = document.querySelectorAll('.category-list .topics .unit');
-  units.forEach(unit => {
-    unit.textContent = unit.textContent.replace("week", "w");
+  // 每次頁面切換時執行
+  api.onPageChange(() => {
+    replaceWeekText();
   });
-});
+</script>
+
 
 
 });
