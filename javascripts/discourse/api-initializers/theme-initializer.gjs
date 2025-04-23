@@ -71,7 +71,7 @@ function interpolateColor(color1, color2, factor) {
   function replaceWeekText() {
     const elements = document.querySelectorAll('.category-list .topics .unit');
     elements.forEach(el => {
-      if (el.textContent.includes('/ week')) {
+      if (el.textContent.includes('week')) {
         el.textContent = el.textContent.replace('week', 'W');
       }
     });
