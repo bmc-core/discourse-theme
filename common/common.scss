@@ -126,6 +126,10 @@ a.tag-topics__topic-link {
     //background: rgba(0,0,0,0.5);
 //}
 
+li .current {
+    color: #fff;
+}
+
 /*----------------分隔線--------------------*/
 
 /*按鈕*/
@@ -406,12 +410,18 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     font-size:0px;
     display:flex;
     width: 1000px;      
-    height: 80px;    
+    height: 60px;    
     background-image:url("https://i.imgur.com/agfch4E.png");
     background-size:250px 43px;
     background-repeat:no-repeat;
     max-width: 250px;
     margin-inline: auto;
+}
+
+.custom-search-banner-wrap {
+    box-sizing: border-box;
+    position: relative;
+    margin: 1em auto 2.5em auto;
 }
 
 /*
@@ -429,6 +439,11 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 /*----------------分隔線--------------------*/
 
 /*首頁的category區*/
+
+/*Topic欄位顯示方式*/
+.category-list .topics .value {
+    color:#FFD306;
+} 
 
 /*導航*/
 .nav-pills li a {
