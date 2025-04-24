@@ -67,26 +67,5 @@ function interpolateColor(color1, color2, factor) {
     }
 }
 
-//改Category Topic欄目的文字
- function replaceWeekText() {
-  const elements = document.querySelectorAll('.category-list .topics .unit');
-  elements.forEach(el => {
-    if (el.textContent.includes('week')) {
-      el.textContent = el.textContent.replace('week', 'W');
-    }
-  });
-}
-
-export default {
-  name: "replace-week-with-w",
-  initialize() {
-    withPluginApi("0.8.7", (api) => {
-      api.onPageChange(() => {
-        replaceWeekText();
-      });
-    });
-  },
-};
-
 
 });
