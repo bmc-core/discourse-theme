@@ -454,11 +454,11 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 
 /*首頁Welcome文字隱藏+Logo*/
 
-/*.welcome-banner__wrap h1 {
+.welcome-banner__wrap h1 {
     font-size:0px;
-}*/
+}
 
-.custom-search-banner-wrap h1 {
+/*.custom-search-banner-wrap h1 {
     font-size:0px;
     display:flex;
     width: 1000px;      
@@ -468,7 +468,7 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     background-repeat:no-repeat;
     max-width: 250px;
     margin-inline: auto;
-}
+}*/
 
 .custom-search-banner-wrap {
     box-sizing: border-box;
@@ -476,7 +476,7 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     margin: 1em auto 2.5em auto;
 }
 
-/*
+
 .welcome-banner__title {
     display:flex;
     width: 1000px;      
@@ -486,7 +486,7 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     background-repeat:no-repeat;
     max-width: 250px;
     margin-inline: auto;
-}*/
+}
 
 /*----------------分隔線--------------------*/
 
