@@ -505,6 +505,10 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     padding: 0 2em;
 }
 
+.navigation-controls>*:not(:last-child) {
+    margin-right: 2em;
+}
+
 /*導航*/
 .nav-pills li a {
     &:hover,
