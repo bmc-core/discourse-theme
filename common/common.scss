@@ -125,9 +125,10 @@ span.header-sidebar-toggle {
     order: 1;
 }
 
-li.header-dropdown-toggle current-user user-menu-panel {
+#current-user {
     order: 2;
-}
+  }
+  
 
 .sidebar-wrapper {
     height: 100%;
