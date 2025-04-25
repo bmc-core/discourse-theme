@@ -127,7 +127,23 @@ a.tag-topics__topic-link {
 //}
 
 .header-sidebar-toggle button {
-    margin-right: 0;
+    margin-right: 7px;
+    d-icon {
+    box-sizing: content-box;
+    appearance: none;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 20px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: .2143em;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0);
+    outline: none;
+    color: var(--header_primary-low-mid);   
+    }
 }
 
 .sidebar-wrapper {
