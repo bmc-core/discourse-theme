@@ -121,9 +121,9 @@ a.tag-topics__topic-link {
 }
 
 //側欄樣式
-//span.header-sidebar-toggle {
-    //order: 1;
-//}
+span.header-sidebar-toggle {
+    order: 1;
+}
 
 .sidebar-wrapper {
     height: 100%;
@@ -458,9 +458,9 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 
 /*首頁Welcome文字隱藏+Logo*/
 
-.welcome-banner__wrap h1 {
+/*.welcome-banner__wrap {
     font-size:0px;
-}
+}*/
 
 /*.custom-search-banner-wrap h1 {
     font-size:0px;
@@ -474,19 +474,21 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     margin-inline: auto;
 }*/
 
-.custom-search-banner-wrap {
+/*.custom-search-banner-wrap {
     box-sizing: border-box;
     position: relative;
     margin: 1em auto 2.5em auto;
-}
+}*/
 
 
 .welcome-banner__title {
+    font-size:0px;
     display:flex;
     width: 1000px;      
     height: 80px;     
     background-image:url("https://i.imgur.com/agfch4E.png"); 
     background-size:250px 43px;
+    background-position: center;
     background-repeat:no-repeat;
     max-width: 250px;
     margin-inline: auto;
