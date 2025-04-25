@@ -125,7 +125,11 @@ span.header-sidebar-toggle {
     order: 1;
 }
 
-#current-user.d-header-icons {
+ul.current-user {
+    display: flex;
+  }
+
+#current-user {
     order: 2;
   }
   
