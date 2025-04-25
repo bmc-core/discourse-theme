@@ -121,18 +121,18 @@ a.tag-topics__topic-link {
 }
 
 //側欄樣式
+
+.contents {
+    display: flex !important;
+}
+
 span.header-sidebar-toggle {
     order: 1;
 }
 
-ul.current-user {
-    display: flex;
-  }
-
 #current-user {
-    order: 2;
+    order: 2; /* 放在後面 */
   }
-  
 
 .sidebar-wrapper {
     height: 100%;
