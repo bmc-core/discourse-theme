@@ -67,5 +67,29 @@ function interpolateColor(color1, color2, factor) {
     }
 }
 
+// 移動header-sidebar-toggle位置
+
+api.onPageChange(() => {
+  const toggle = document.querySelector('.header-sidebar-toggle');
+  const icons = document.querySelector('.d-header-icons');
+
+  if (toggle && icons && !document.querySelector('.header-sidebar-toggle-li')) {
+    // 包裝成 li
+    const li = document.createElement('li');
+    li.className = 'header-sidebar-toggle-li header-dropdown-toggle';
+    li.appendChild(toggle);
+
+    // 插入到第4個位置（index = 3）
+    const position = 3;
+    const children = icons.children;
+
+    if (children.length >= position) {
+      icons.insertBefore(li, children[position]);
+    } else {
+      icons.appendChild(li);
+    }
+  }
+});
+
 
 });
