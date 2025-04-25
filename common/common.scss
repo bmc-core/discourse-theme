@@ -129,9 +129,9 @@ a.tag-topics__topic-link {
     height: 100%;
     position: fixed;
     top: var(--main-outlet-offset);
-    left: 150px;
+    left: 0px;
     width: 300px;
-    z-index: 10;
+    //z-index: 0;
     background: transparent;
     //flex: none !important; // 避免它被 flex 布局當成正常項目
 }
