@@ -113,16 +113,20 @@ a.tag-topics__topic-link {
 }
 
 .sidebar-footer-wrapper .sidebar-footer-container{
-    background: rgba(0,48,96,0.1);
+    background: #0E0E0E);
 }
 
 .hamburger-panel .revamped .sidebar-footer-wrapper .sidebar-footer-container{
-    background: rgba(0,0,0,0.9);
+    background: #0E0E0E);
 }
 
 //側欄樣式
 span.header-sidebar-toggle {
     order: 1;
+}
+
+li.header-dropdown-toggle current-user user-menu-panel {
+    order: 2;
 }
 
 .sidebar-wrapper {
@@ -138,12 +142,14 @@ span.header-sidebar-toggle {
 
 .admin-area .sidebar-wrapper .admin-panel {
     /*背景半透明*/
-    background: rgba(0,0,0,0.9);
+    // background: rgba(0,0,0,0.9);
+    background: #0E0E0E;
 }
 
 .sidebar-wrapper .sidebar-sections {
      /*背景半透明*/
-    background: rgba(0,0,0,0.9);
+    //background: rgba(0,0,0,0.9);
+    background: #0E0E0E;
 }
 
 //.sidebar-wrapper {
