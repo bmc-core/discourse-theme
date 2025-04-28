@@ -198,6 +198,29 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// 當editor預覽有東西的時候隱藏Content文字
+function checkEditorPreviewContent() {
+    const preview = document.querySelector('.d-editor-preview');
+    if (!preview) return;
+
+    // 檢查是否有實際內容
+    const text = preview.innerText.trim();
+    if (text.length > 0) {
+        preview.classList.add('has-content');
+    } else {
+        preview.classList.remove('has-content');
+    }
+}
+
+// 一開始就檢查一次
+checkEditorPreviewContent();
+
+// 監聽內容變化 (使用 MutationObserver)
+const preview = document.querySelector('.d-editor-preview');
+if (preview) {
+    const observer = new MutationObserver(checkEditorPreviewContent);
+    observer.observe(preview, { childList: true, subtree: true, characterData: true });
+}
 
 
 });
