@@ -91,5 +91,28 @@ api.onPageChange(() => {
   }
 });
 
+//popup訊息顯示時，修改padding-right
+document.addEventListener('DOMContentLoaded', function() {
+    const composerPopup = document.querySelector('.composer-popup');
+    const editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
+
+    // 當 .composer-popup 變更 class 時觸發
+    const checkPopupStatus = () => {
+        if (composerPopup.classList.contains('ember-view')) {
+            // .composer-popup 顯示時，設置 padding-right 為螢幕寬度的 25%
+            editorPreviewWrapper.style.paddingRight = 'calc(25vw)';
+        } else {
+            // .composer-popup 隱藏時，設置 padding-right 為 0
+            editorPreviewWrapper.style.paddingRight = '0';
+        }
+    };
+
+    // 初始檢查
+    checkPopupStatus();
+
+    // 監聽 .composer-popup 顯示/隱藏變化
+    composerPopup.addEventListener('transitionend', checkPopupStatus);  // 可根據實際過渡時間或變化來調整事件
+});
+
 
 });
