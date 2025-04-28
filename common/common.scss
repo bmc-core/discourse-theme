@@ -638,21 +638,32 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 
 .category-boxes-with-topics .category-box {
      /*category box*/
-    border-top-width: 15px;
-    border-left-width: 0px;
-    border-radius: 10px 10px 0 0;
+    //border-top-width: 15px;
+    //border-left-width:0px;
+    //border-radius: 10px 10px 0 0;
+    border-left-width: 7.5px;
+    border-radius: 0;
 }
 
 .category-boxes .category-box-inner, .category-boxes-with-topics .category-box-inner {
      /*category box 內部區域*/
-    box-sizing: content-box;
+    /*box-sizing: content-box;
     width: 100%;
     display: flex;
     padding: 1em;
     border-width: 2px 2px 2px 2px;
     border-style: solid;
     border-radius: 0 0 10px 10px;
-    border-color: var(--primary-low);
+    border-color: var(--primary-low);*/
+    box-sizing: content-box;
+    width: 100%;
+    display: flex;
+    padding: 1em;
+    border-width: 1px;
+    border-left-width: 0px;
+    border-style: solid;
+    border-radius: 0 10px 10px 0;
+    border-color: #fff;
 }
 
 .category-boxes-with-topics .featured-topics li {
