@@ -143,7 +143,7 @@ api.onPageChange(() => {
     }
 });*/
 
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     let editorPreviewWrapper = null;
     let popupObserver = null; // 防止重複開 observer
 
@@ -196,6 +196,57 @@ document.addEventListener('DOMContentLoaded', function () {
         // 額外保險：每10秒檢查一次
         setInterval(checkPopupStatus, 10000);
     }
+});*/
+
+document.addEventListener('DOMContentLoaded', function () {
+    let editorPreviewWrapper = null;
+    let popupObserver = null;
+
+    const waitForEditorPreview = new MutationObserver(() => {
+        editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
+        if (editorPreviewWrapper) {
+            console.log('✅ 找到 .d-editor-preview-wrapper 了');
+            waitForEditorPreview.disconnect();
+            setupPopupWatcher();
+        }
+    });
+
+    waitForEditorPreview.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+    function setupPopupWatcher() {
+        const checkPopupStatus = () => {
+            const composerPopup = document.querySelector('.composer-popup.ember-view');
+            if (composerPopup && !composerPopup.classList.contains('hidden')) {
+                // composer 存在而且沒被隱藏
+                editorPreviewWrapper.style.paddingRight = '30vw';
+            } else {
+                editorPreviewWrapper.style.paddingRight = '0';
+            }
+        };
+
+        checkPopupStatus();
+
+        if (popupObserver) {
+            popupObserver.disconnect();
+        }
+
+        popupObserver = new MutationObserver(() => {
+            checkPopupStatus();
+        });
+
+        popupObserver.observe(document.body, {
+            childList: true,
+            subtree: true,
+            attributes: true,
+            attributeFilter: ['class'] // 只關注 class 變化
+        });
+
+        setInterval(checkPopupStatus, 10000);
+    }
 });
+
 
 });
