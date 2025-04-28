@@ -41,7 +41,7 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
 }
 
 .d-editor-preview-wrapper {
-    flex: 1.5;
+    flex: 1;
     padding-right: calc(30vw);
 }
 
@@ -51,7 +51,7 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
     border-radius: 5px;
 }
 
-.d-editor-preview::after {
+.d-editor-preview::before {
     content: "Here you can preview what you type.";  /* 設定顯示的文字 */
     display: block;            /* 讓文字顯示為塊級元素 */
     margin-top: 2em;
