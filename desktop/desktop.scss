@@ -45,6 +45,20 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
     padding-right: calc(30vw);
 }
 
+.d-editor-preview {
+    height: auto;
+    border: 1px solid var(--tertiary);
+    border-radius: 5px;
+}
+
+.d-editor-preview::after {
+    content: "Here you can preview what you type.";  /* 設定顯示的文字 */
+    display: block;            /* 讓文字顯示為塊級元素 */
+    margin-top: 2em;
+    margin-left: 2em;          /* 設定文字與內容的間距 */
+    color: var(--primary);            /* 設定文字顏色 */
+}
+
 
 //body #main-outlet-wrapper {
     //grid-template-areas: "content sidebar";
