@@ -96,9 +96,12 @@ api.onPageChange(() => {
 document.addEventListener('DOMContentLoaded', function () {
     const editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
 
-    if (!editorPreviewWrapper) return; // 安全檢查，避免出錯
+    if (!editorPreviewWrapper) {
+        console.error('找不到 .d-editor-preview-wrapper');
+        return; // 直接結束，避免出錯
+    }
 
-    const checkPopupStatus = () => {
+    const updatePadding = () => {
         const composerPopup = document.querySelector('.composer-popup.ember-view');
         if (composerPopup) {
             editorPreviewWrapper.style.paddingRight = '30vw';
@@ -107,19 +110,28 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     };
 
-    // 先檢查一次（如果剛載入就有 popup 的情況）
-    checkPopupStatus();
+    // 先檢查一次（防止剛載入時 popup 就存在的情況）
+    updatePadding();
 
-    // 設定 MutationObserver，監聽 body 內子元素變化
-    const observer = new MutationObserver(() => {
-        checkPopupStatus();
+    // 用 MutationObserver 監聽 body 子元素變動
+    const observer = new MutationObserver((mutationsList) => {
+        for (const mutation of mutationsList) {
+            if (mutation.type === 'childList') {
+                // 每次 DOM 有變動時，檢查是否出現或消失 composer-popup
+                updatePadding();
+            }
+        }
     });
 
     observer.observe(document.body, {
         childList: true,
-        subtree: true,
+        subtree: true
     });
+
+    // 保險：額外加一個 interval，萬一 mutation 有漏，10秒自動重新檢查
+    setInterval(updatePadding, 10000);
 });
+
 
 
 
