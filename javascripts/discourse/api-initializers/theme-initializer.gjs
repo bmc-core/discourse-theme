@@ -93,7 +93,7 @@ api.onPageChange(() => {
 
 
 //popup訊息存在與否，預覽畫面的變化
-document.addEventListener('DOMContentLoaded', function () {
+/*document.addEventListener('DOMContentLoaded', function () {
     let editorPreviewWrapper = null;
 
     // 專門等待 d-editor-preview-wrapper 出現
@@ -141,7 +141,63 @@ document.addEventListener('DOMContentLoaded', function () {
         // 額外保險：每10秒檢查一次
         setInterval(checkPopupStatus, 10000);
     }
+});*/
+
+document.addEventListener('DOMContentLoaded', function () {
+    let editorPreviewWrapper = null;
+    let popupObserver = null; // 防止重複開 observer
+
+    // 專門等待 d-editor-preview-wrapper 出現
+    const waitForEditorPreview = new MutationObserver(() => {
+        editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
+        if (editorPreviewWrapper) {
+            console.log('✅ 找到 .d-editor-preview-wrapper 了');
+
+            // 找到後，馬上停止這個 observer
+            waitForEditorPreview.disconnect();
+
+            // 開始監聽 popup
+            setupPopupWatcher();
+        }
+    });
+
+    waitForEditorPreview.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+
+    function setupPopupWatcher() {
+        const checkPopupStatus = () => {
+            const composerPopup = document.querySelector('.composer-popup.ember-view');
+            if (composerPopup) {
+                editorPreviewWrapper.style.paddingRight = '30vw';
+            } else {
+                editorPreviewWrapper.style.paddingRight = '0';
+            }
+        };
+
+        // 初次檢查一次
+        checkPopupStatus();
+
+        // 如果之前已經有 observer，先關掉，避免重複
+        if (popupObserver) {
+            popupObserver.disconnect();
+        }
+
+        popupObserver = new MutationObserver(() => {
+            checkPopupStatus();
+        });
+
+        popupObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // 額外保險：每10秒檢查一次
+        setInterval(checkPopupStatus, 10000);
+    }
 });
+
 
 
 });
