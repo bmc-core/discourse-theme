@@ -92,15 +92,24 @@ a.tag-topics__topic-link {
     /*背景半透明*/
     background:rgba(0,0,0,0.5);
     padding: 2em 2em 2em 2.2em; // 簡化 padding-right/left
-    max-width: 90vw; /* 設定隨螢幕大小變更占比 */
-    height: 100vw;
+    //max-width: 90vw; /* 設定隨螢幕大小變更占比 */
+    min-height: 100vh;
     margin: 0 auto;
-    box-sizing: border-box;
+    //box-sizing: border-box;
+    //justify-content: center;
 }
+
+#main-outlet {
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 1em;
+}
+
 /* 
 #main-outlet {
     padding: 0 0 0 20em;
-    height: 100vh;
+    height: auto;
 }
     */
 
@@ -199,6 +208,10 @@ a.tag-topics__topic-link {
 //}
 
 //powered-by-discourse
+.powered-by-discourse {
+    justify-self: end; 
+}
+
 //.powered-by-discourse__content {
     //display: block;
     //align-items: center;
