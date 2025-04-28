@@ -202,12 +202,17 @@ document.addEventListener('DOMContentLoaded', function () {
     let editorPreviewWrapper = null;
     let popupObserver = null;
 
-    const waitForEditorPreview = new MutationObserver(() => {
+    function getEditorPreviewWrapper() {
         editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
-        if (editorPreviewWrapper) {
-            console.log('✅ 找到 .d-editor-preview-wrapper 了');
-            waitForEditorPreview.disconnect();
-            setupPopupWatcher();
+    }
+
+    const waitForEditorPreview = new MutationObserver(() => {
+        if (!editorPreviewWrapper) {
+            getEditorPreviewWrapper();
+            if (editorPreviewWrapper) {
+                console.log('✅ 找到 .d-editor-preview-wrapper 了');
+                setupPopupWatcher();
+            }
         }
     });
 
@@ -218,9 +223,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function setupPopupWatcher() {
         const checkPopupStatus = () => {
+            if (!editorPreviewWrapper || !document.body.contains(editorPreviewWrapper)) {
+                console.warn('⚠️ editorPreviewWrapper 消失了，重新抓取...');
+                getEditorPreviewWrapper();
+                if (!editorPreviewWrapper) {
+                    console.error('❌ 還是找不到 editorPreviewWrapper，暫停檢查');
+                    return;
+                }
+            }
+
             const composerPopup = document.querySelector('.composer-popup.ember-view');
+
             if (composerPopup && !composerPopup.classList.contains('hidden')) {
-                // composer 存在而且沒被隱藏
                 editorPreviewWrapper.style.paddingRight = '30vw';
             } else {
                 editorPreviewWrapper.style.paddingRight = '0';
@@ -241,12 +255,13 @@ document.addEventListener('DOMContentLoaded', function () {
             childList: true,
             subtree: true,
             attributes: true,
-            attributeFilter: ['class'] // 只關注 class 變化
+            attributeFilter: ['class']
         });
 
-        setInterval(checkPopupStatus, 10000);
+        setInterval(checkPopupStatus, 5000); // 每5秒自動修正一次
     }
 });
+
 
 
 });
