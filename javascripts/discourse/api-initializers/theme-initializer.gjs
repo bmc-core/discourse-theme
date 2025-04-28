@@ -91,14 +91,15 @@ api.onPageChange(() => {
   }
 });
 
-//popup訊息顯示時，修改padding-right
+
+//popup訊息存在與否，預覽畫面的變化
 document.addEventListener('DOMContentLoaded', function() {
-    const composerPopup = document.querySelector('.composer-popup');
     const editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
 
-    // 檢查 composerPopup 顯示或隱藏的狀態
+    // 檢查 composerPopup 是否顯示
     const checkPopupStatus = () => {
-        if (composerPopup.classList.contains('ember-view')) {
+        const composerPopup = document.querySelector('.composer-popup.ember-view'); // 當 popup 顯示時會有這個 class
+        if (composerPopup) {
             // .composer-popup 顯示時，設置 padding-right 為螢幕寬度的 30%
             editorPreviewWrapper.style.paddingRight = 'calc(30vw)';
         } else {
@@ -110,11 +111,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始檢查
     checkPopupStatus();
 
-    // 使用 MutationObserver 監聽 .composer-popup 類的變化
-    const observer = new MutationObserver(checkPopupStatus);
-    observer.observe(composerPopup, {
-        attributes: true,    // 監聽屬性變化
-        attributeFilter: ['class'], // 只監聽 class 屬性變化
+    // 使用 MutationObserver 監聽 body 或父元素的變化，檢查 .composer-popup 的存在
+    const observer = new MutationObserver(() => {
+        checkPopupStatus();
+    });
+
+    // 開始監聽 body 中的變化（例如 popup 元素的移除）
+    observer.observe(document.body, {
+        childList: true,   // 監聽 DOM 樹的子元素變化
+        subtree: true      // 監聽整個 DOM 樹的變化
     });
 });
 
