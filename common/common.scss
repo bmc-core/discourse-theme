@@ -51,6 +51,10 @@ a.tag-topics__topic-link {
     color: #D0D0D0;
 }
 
+.topic-list-item.visited .topic-list-data .discourse-tag {
+    color: var(--tag-text-color);
+}
+
 @media screen and (min-width: 767px) {
     .tc-right-sidebar {
         display: block;
