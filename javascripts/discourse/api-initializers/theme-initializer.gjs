@@ -201,54 +201,28 @@ api.onPageChange(() => {
 document.addEventListener('DOMContentLoaded', function () {
     let editorPreviewWrapper = null;
     let popupObserver = null;
+    let previewObserver = null;
 
     function getEditorPreviewWrapper() {
-        editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
+        return document.querySelector('.d-editor-preview-wrapper');
     }
 
-    const waitForEditorPreview = new MutationObserver(() => {
-        if (!editorPreviewWrapper) {
-            getEditorPreviewWrapper();
-            if (editorPreviewWrapper) {
-                console.log('✅ 找到 .d-editor-preview-wrapper 了');
-                setupPopupWatcher();
-            }
-        }
-    });
+    function checkAndUpdatePadding() {
+        if (!editorPreviewWrapper) return;
 
-    waitForEditorPreview.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
+        const composerPopup = document.querySelector('.composer-popup.ember-view');
+        const composerVisible = composerPopup && !composerPopup.classList.contains('hidden');
+
+        editorPreviewWrapper.style.paddingRight = composerVisible ? '30vw' : '0';
+    }
 
     function setupPopupWatcher() {
-        const checkPopupStatus = () => {
-            if (!editorPreviewWrapper || !document.body.contains(editorPreviewWrapper)) {
-                console.warn('⚠️ editorPreviewWrapper 消失了，重新抓取...');
-                getEditorPreviewWrapper();
-                if (!editorPreviewWrapper) {
-                    console.error('❌ 還是找不到 editorPreviewWrapper，暫停檢查');
-                    return;
-                }
-            }
-
-            const composerPopup = document.querySelector('.composer-popup.ember-view');
-
-            if (composerPopup && !composerPopup.classList.contains('hidden')) {
-                editorPreviewWrapper.style.paddingRight = '30vw';
-            } else {
-                editorPreviewWrapper.style.paddingRight = '0';
-            }
-        };
-
-        checkPopupStatus();
-
         if (popupObserver) {
             popupObserver.disconnect();
         }
 
         popupObserver = new MutationObserver(() => {
-            checkPopupStatus();
+            checkAndUpdatePadding();
         });
 
         popupObserver.observe(document.body, {
@@ -257,8 +231,40 @@ document.addEventListener('DOMContentLoaded', function () {
             attributes: true,
             attributeFilter: ['class']
         });
+    }
 
-        setInterval(checkPopupStatus, 5000); // 每5秒自動修正一次
+    function setupEditorPreviewWatcher() {
+        if (previewObserver) {
+            previewObserver.disconnect();
+        }
+
+        previewObserver = new MutationObserver(() => {
+            editorPreviewWrapper = getEditorPreviewWrapper();
+            if (editorPreviewWrapper) {
+                console.log('✅ editorPreviewWrapper 重新抓到');
+                checkAndUpdatePadding();
+            } else {
+                console.warn('⚠️ editorPreviewWrapper 不見了，等待重建...');
+            }
+        });
+
+        previewObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    }
+
+    // 初始啟動
+    editorPreviewWrapper = getEditorPreviewWrapper();
+
+    if (editorPreviewWrapper) {
+        console.log('✅ 一開始就找到 editorPreviewWrapper');
+        setupPopupWatcher();
+        setupEditorPreviewWatcher();
+        checkAndUpdatePadding();
+    } else {
+        console.log('⏳ 還沒找到 editorPreviewWrapper，開始等待...');
+        setupEditorPreviewWatcher();
     }
 });
 
