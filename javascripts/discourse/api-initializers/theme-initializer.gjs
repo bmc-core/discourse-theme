@@ -203,7 +203,7 @@ function checkEditorPreviewContent() {
     const preview = document.querySelector('.d-editor-preview');
     if (!preview) return;
 
-    // 檢查是否有實際內容
+    // 檢查是否有內容，並根據內容的長度決定是否隱藏 ::before
     const text = preview.innerText.trim();
     if (text.length > 0) {
         preview.classList.add('has-content');
