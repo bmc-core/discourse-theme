@@ -93,27 +93,31 @@ api.onPageChange(() => {
 
 
 //popup訊息存在與否，預覽畫面的變化
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
 
-    // 檢查 composerPopup 是否顯示
     const checkPopupStatus = () => {
         const composerPopup = document.querySelector('.composer-popup.ember-view');
         if (composerPopup) {
-            editorPreviewWrapper.style.paddingRight = 'calc(30vw)';
+            // 如果找到 popup，設 padding-right
+            editorPreviewWrapper.style.paddingRight = '30vw';
         } else {
+            // 如果找不到 popup，設回 0
             editorPreviewWrapper.style.paddingRight = '0';
         }
     };
 
-    // 初始檢查
+    // 先檢查一次
     checkPopupStatus();
 
-    // 如果 .composer-popup 進行顯示或隱藏時，手動觸發
-    document.body.addEventListener('click', function(event) {
-        if (event.target.closest('.composer-popup .close')) {
-            checkPopupStatus();
-        }
+    // 開始用 MutationObserver 監聽 body 裡子元素變化
+    const observer = new MutationObserver(() => {
+        checkPopupStatus();
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true,
     });
 });
 
