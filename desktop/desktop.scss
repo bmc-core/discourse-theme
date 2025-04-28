@@ -20,9 +20,14 @@ body.has-sidebar-page .wrap {
 
 // DM
 .chat-drawer-outlet-container {
-    position: absolute;
+    //position: absolute;
     top: 56px;
     --composer-right: 150px !important;
+    background: #3C3C3C;
+}
+
+.chat-drawer {
+    background: #3C3C3C;
 }
 
 
