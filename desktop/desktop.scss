@@ -7,6 +7,8 @@ button#create-topic {
     padding-bottom: 2em;
 }
 
+//Sidebar
+
 body.has-sidebar-page #main-outlet-wrapper {
     grid-template-columns: 250px 1fr;
     padding-left: 0;
@@ -15,3 +17,27 @@ body.has-sidebar-page #main-outlet-wrapper {
 body.has-sidebar-page .wrap {
     max-width: 90vw;
 }
+
+// DM
+.chat-drawer-outlet-container {
+    position: absolute;
+    --composer-right: 15px !important;
+}
+
+
+//body #main-outlet-wrapper {
+    //grid-template-areas: "content sidebar";
+    //grid-template-columns: minmax(0, 1fr);
+//}
+    
+//body.sidebar-animate #main-outlet-wrapper {
+    //grid-template-areas: "content sidebar";
+//}
+    
+//body.has-sidebar-page #main-outlet-wrapper {
+    //grid-template-areas: "content sidebar";
+    //grid-template-columns: minmax(0, 1fr) 0px !important;
+    //padding: 2em 5%;
+    //grid-template-columns: 1fr !important;
+    //grid-template-areas: "content" !important;
+//}
