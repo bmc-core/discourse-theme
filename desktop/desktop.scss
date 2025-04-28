@@ -55,15 +55,21 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
 .d-editor-preview::before {
     content: "Here you can preview what you type.";  /* 設定顯示的文字 */
     display: block;            /* 讓文字顯示為塊級元素 */
-    margin-top: 2em;
+    margin-top:0.5em;
     margin-left: 2em;          /* 設定文字與內容的間距 */
     color: var(--header_primary-low-mid);            /* 設定文字顏色 */
+}
+
+.cooked>*:first-child, .d-editor-preview>*:first-child {
+    margin-top: 0.5em;
+    margin-left: 2em;
 }
 
 /* 有內容時，把 ::before 隱藏 */
 .d-editor-preview.has-content::before {
     content: none;
 }
+
 
 //body #main-outlet-wrapper {
     //grid-template-areas: "content sidebar";
