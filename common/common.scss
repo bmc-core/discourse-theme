@@ -634,6 +634,7 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     /*category box heading文字*/
     font: small-caps bold 18px/1 sans-serif;
     letter-spacing: 1px;
+    //align-self: flex-start;
 }
 
 .category-boxes-with-topics .category-box {
@@ -663,7 +664,8 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     border-left-width: 0px;
     border-style: solid;
     border-radius: 0 10px 10px 0;
-    border-color: var(--header_primary-low-mid);
+    background-color: rgba(255, 255, 255, 0.1);
+    //border-color: var(--header_primary-low-mid);
 }
 
 .category-boxes-with-topics .featured-topics li {
