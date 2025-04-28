@@ -47,7 +47,7 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
 
 .d-editor-preview {
     height: auto;
-    border: 1px solid var(--tertiary);
+    border: 1px solid var(--header_primary-low-mid);
     border-radius: 5px;
 }
 
@@ -56,7 +56,7 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
     display: block;            /* 讓文字顯示為塊級元素 */
     margin-top: 2em;
     margin-left: 2em;          /* 設定文字與內容的間距 */
-    color: var(--primary);            /* 設定文字顏色 */
+    color: var(--header_primary-low-mid);            /* 設定文字顏色 */
 }
 
 
