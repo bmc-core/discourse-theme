@@ -100,10 +100,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const checkPopupStatus = () => {
         const composerPopup = document.querySelector('.composer-popup.ember-view');
         if (composerPopup) {
-            // .composer-popup 顯示時，設置 padding-right 為螢幕寬度的 30%
             editorPreviewWrapper.style.paddingRight = 'calc(30vw)';
         } else {
-            // .composer-popup 隱藏時，設置 padding-right 為 0
             editorPreviewWrapper.style.paddingRight = '0';
         }
     };
@@ -111,24 +109,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始檢查
     checkPopupStatus();
 
-    // 使用 MutationObserver 監聽 .composer-popup 的顯示/隱藏變化
-    const observer = new MutationObserver((mutationsList) => {
-        mutationsList.forEach((mutation) => {
-            if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-                checkPopupStatus();
-            }
-        });
+    // 如果 .composer-popup 進行顯示或隱藏時，手動觸發
+    document.body.addEventListener('click', function(event) {
+        if (event.target.closest('.composer-popup .close')) {
+            checkPopupStatus();
+        }
     });
-
-    // 監聽 .composer-popup 類的變化
-    const composerPopup = document.querySelector('.composer-popup');
-    if (composerPopup) {
-        observer.observe(composerPopup, {
-            attributes: true,  // 監聽屬性變化
-            attributeFilter: ['class'], // 只監聽 class 屬性的變化
-        });
-    }
 });
+
 
 
 
