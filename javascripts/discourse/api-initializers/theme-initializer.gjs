@@ -94,46 +94,54 @@ api.onPageChange(() => {
 
 //popup訊息存在與否，預覽畫面的變化
 document.addEventListener('DOMContentLoaded', function () {
-    const editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
+    let editorPreviewWrapper = null;
 
-    if (!editorPreviewWrapper) {
-        console.error('找不到 .d-editor-preview-wrapper');
-        return; // 直接結束，避免出錯
-    }
+    // 專門等待 d-editor-preview-wrapper 出現
+    const waitForEditorPreview = new MutationObserver(() => {
+        editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
+        if (editorPreviewWrapper) {
+            console.log('✅ 找到 .d-editor-preview-wrapper 了');
 
-    const updatePadding = () => {
-        const composerPopup = document.querySelector('.composer-popup.ember-view');
-        if (composerPopup) {
-            editorPreviewWrapper.style.paddingRight = '30vw';
-        } else {
-            editorPreviewWrapper.style.paddingRight = '0';
-        }
-    };
+            // 找到後，馬上停止這個 observer
+            waitForEditorPreview.disconnect();
 
-    // 先檢查一次（防止剛載入時 popup 就存在的情況）
-    updatePadding();
-
-    // 用 MutationObserver 監聽 body 子元素變動
-    const observer = new MutationObserver((mutationsList) => {
-        for (const mutation of mutationsList) {
-            if (mutation.type === 'childList') {
-                // 每次 DOM 有變動時，檢查是否出現或消失 composer-popup
-                updatePadding();
-            }
+            // 開始正常監聽 composer-popup
+            setupPopupWatcher();
         }
     });
 
-    observer.observe(document.body, {
+    waitForEditorPreview.observe(document.body, {
         childList: true,
         subtree: true
     });
 
-    // 保險：額外加一個 interval，萬一 mutation 有漏，10秒自動重新檢查
-    setInterval(updatePadding, 10000);
+    function setupPopupWatcher() {
+        const checkPopupStatus = () => {
+            const composerPopup = document.querySelector('.composer-popup.ember-view');
+            if (composerPopup) {
+                editorPreviewWrapper.style.paddingRight = '30vw';
+            } else {
+                editorPreviewWrapper.style.paddingRight = '0';
+            }
+        };
+
+        // 初次檢查
+        checkPopupStatus();
+
+        // 持續監聽 popup 出現/消失
+        const popupObserver = new MutationObserver(() => {
+            checkPopupStatus();
+        });
+
+        popupObserver.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+
+        // 額外保險：每10秒檢查一次
+        setInterval(checkPopupStatus, 10000);
+    }
 });
-
-
-
 
 
 });
