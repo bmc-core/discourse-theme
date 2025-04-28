@@ -96,11 +96,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const composerPopup = document.querySelector('.composer-popup');
     const editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
 
-    // 當 .composer-popup 變更 class 時觸發
+    // 檢查 composerPopup 顯示或隱藏的狀態
     const checkPopupStatus = () => {
         if (composerPopup.classList.contains('ember-view')) {
-            // .composer-popup 顯示時，設置 padding-right 為螢幕寬度的 25%
-            editorPreviewWrapper.style.paddingRight = 'calc(25vw)';
+            // .composer-popup 顯示時，設置 padding-right 為螢幕寬度的 30%
+            editorPreviewWrapper.style.paddingRight = 'calc(30vw)';
         } else {
             // .composer-popup 隱藏時，設置 padding-right 為 0
             editorPreviewWrapper.style.paddingRight = '0';
@@ -110,8 +110,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始檢查
     checkPopupStatus();
 
-    // 監聽 .composer-popup 顯示/隱藏變化
-    composerPopup.addEventListener('transitionend', checkPopupStatus);  // 可根據實際過渡時間或變化來調整事件
+    // 使用 MutationObserver 監聽 .composer-popup 類的變化
+    const observer = new MutationObserver(checkPopupStatus);
+    observer.observe(composerPopup, {
+        attributes: true,    // 監聽屬性變化
+        attributeFilter: ['class'], // 只監聽 class 屬性變化
+    });
 });
 
 
