@@ -96,21 +96,21 @@ api.onPageChange(() => {
 document.addEventListener('DOMContentLoaded', function () {
     const editorPreviewWrapper = document.querySelector('.d-editor-preview-wrapper');
 
+    if (!editorPreviewWrapper) return; // 安全檢查，避免出錯
+
     const checkPopupStatus = () => {
         const composerPopup = document.querySelector('.composer-popup.ember-view');
         if (composerPopup) {
-            // 如果找到 popup，設 padding-right
             editorPreviewWrapper.style.paddingRight = '30vw';
         } else {
-            // 如果找不到 popup，設回 0
             editorPreviewWrapper.style.paddingRight = '0';
         }
     };
 
-    // 先檢查一次
+    // 先檢查一次（如果剛載入就有 popup 的情況）
     checkPopupStatus();
 
-    // 開始用 MutationObserver 監聽 body 裡子元素變化
+    // 設定 MutationObserver，監聽 body 內子元素變化
     const observer = new MutationObserver(() => {
         checkPopupStatus();
     });
