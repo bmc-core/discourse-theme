@@ -1,7 +1,7 @@
 import { apiInitializer } from "discourse/lib/api";
 
 export default apiInitializer((api) => {
-  // Your code here
+  
   //timeline滾動時改變date顏色
 window.addEventListener("scroll", function() {
     let scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
@@ -41,7 +41,7 @@ mobileMedia.addEventListener("change", function(e) {
 
 // 重新執行 JavaScript 的函式
 function runDesktopScripts() {
-    // 這裡放你要重新執行的 JavaScript 程式
+    // 要重新執行的 JS
     window.addEventListener("scroll", function() {
     let scrollPercentage = window.scrollY / (document.body.scrollHeight - window.innerHeight);
     
@@ -66,8 +66,9 @@ function interpolateColor(color1, color2, factor) {
     return `rgb(${r},${g},${b})`;
     }
 }
+/*-------------結束---------------*/
 
-// 移動header-sidebar-toggle位置
+// 移動header-sidebar-toggle位置 (不用了但留著參考)
 
 /*api.onPageChange(() => {
   const toggle = document.querySelector('.header-sidebar-toggle');
@@ -91,6 +92,7 @@ function interpolateColor(color1, color2, factor) {
   }
 });*/
 
+/*-------------結束---------------*/
 
 //popup訊息存在與否，預覽畫面的變化
 /*document.addEventListener('DOMContentLoaded', function () {
@@ -241,10 +243,10 @@ document.addEventListener('DOMContentLoaded', function () {
         previewObserver = new MutationObserver(() => {
             editorPreviewWrapper = getEditorPreviewWrapper();
             if (editorPreviewWrapper) {
-                console.log('✅ editorPreviewWrapper 重新抓到');
+                console.log('✅ editorPreviewWrapper');
                 checkAndUpdatePadding();
             } else {
-                console.warn('⚠️ editorPreviewWrapper 不見了，等待重建...');
+                console.warn('⚠️ editorPreviewWrapper消失');
             }
         });
 
@@ -258,16 +260,26 @@ document.addEventListener('DOMContentLoaded', function () {
     editorPreviewWrapper = getEditorPreviewWrapper();
 
     if (editorPreviewWrapper) {
-        console.log('✅ 一開始就找到 editorPreviewWrapper');
+        console.log('✅ 一開始就有 editorPreviewWrapper');
         setupPopupWatcher();
         setupEditorPreviewWatcher();
         checkAndUpdatePadding();
     } else {
-        console.log('⏳ 還沒找到 editorPreviewWrapper，開始等待...');
+        console.log('⏳ 沒找到 editorPreviewWrapper，等待...');
         setupEditorPreviewWatcher();
     }
 });
 
+// 把Serchbar塞進Header
+// 等到 Discourse 的 DOM 都加載完畢
+api.onPageChange(() => {
+  const searchMenu = document.querySelector('.search-menu');
+  const header = document.querySelector('#d-header');
+
+  if (searchMenu && header && !header.querySelector('.search-menu')) {
+    header.appendChild(searchMenu); 
+  }
+});
 
 
 });
