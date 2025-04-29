@@ -69,11 +69,11 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
 
 /*----------------------------------*/
 //sidebar 出現時往左推
+/*
 body #main-outlet-wrapper {
     grid-template-areas: "content sidebar";
     grid-template-columns: minmax(0, 1fr);
-    transition: grid-template-columns 0.5s ease; /* 加平滑動畫 */
-}
+    transition: grid-template-columns 0.5s ease; }
     
 body.sidebar-animate #main-outlet-wrapper {
     grid-template-areas: "content sidebar";
@@ -83,22 +83,22 @@ body.has-sidebar-page #main-outlet-wrapper {
     grid-template-areas: "content sidebar";
     padding: 2em 5%;
     grid-template-columns: minmax(0, 1fr) 10em;
-    transition: grid-template-columns 0.5s ease; /* 讓 sidebar 寬度變化有動畫 */
-    //grid-template-columns: 1fr !important;
-    //grid-template-areas: "content" !important;
-}
+    transition: grid-template-columns 0.5s ease; //讓 sidebar 寬度變化有動畫
+   }
+*/
 
 /* ====== 新增動畫用的 ====== */
 // Main內容滑動
+/*
 body #main-outlet {
-    transition: transform 0.5s ease; /* 平滑移動 */
+    transition: transform 0.5s ease; // 平滑移動
 }
 
 body.has-sidebar-page #main-outlet {
-    transform: translateX(-20px); /* 左推 20px，可自己調整 */
+    transform: translateX(-20px); // 左推 20px，可自己調整
 }
 
-/* 收回時也滑順 */
+//收回時也滑順
 body:not(.has-sidebar-page) #main-outlet {
     transform: translateX(0);
 }
@@ -106,5 +106,38 @@ body:not(.has-sidebar-page) #main-outlet {
 //Admin panel按鈕往右移
 .header-sidebar-toggle {
     order: 1;
+  }*/
+
+  /* === 主容器包住 main 和 sidebar === */
+#main-outlet-wrapper {
+    position: relative;
+    padding: 2em 5%;
+    transition: transform 0.5s ease;
+    display: flex; /* 可以橫向排列 main 和 sidebar */
   }
+  
+  /* === sidebar 設定 === */
+  .sidebar-container {
+    width: 10em;
+    min-width: 10em;
+    background: #f3f3f3;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translateX(100%); /* 隱藏在右邊 */
+    transition: transform 0.5s ease;
+    z-index: 1000;
+  }
+  
+  /* === sidebar 開啟時 === */
+  body.has-sidebar-page .sidebar-container {
+    transform: translateX(0); /* 滑進來 */
+  }
+  
+  /* === main-outlet-wrapper 在 sidebar 出現時往左推 === */
+  body.has-sidebar-page #main-outlet-wrapper {
+    transform: translateX(-10em); /* 往左推 sidebar 寬度 */
+  }
+  
   
