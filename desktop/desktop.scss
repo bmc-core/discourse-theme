@@ -102,4 +102,9 @@ body.has-sidebar-page #main-outlet {
 body:not(.has-sidebar-page) #main-outlet {
     transform: translateX(0);
 }
+
+//Admin panel按鈕往右移
+.header-sidebar-toggle {
+    order: 1;
+  }
   
