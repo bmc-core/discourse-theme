@@ -281,4 +281,27 @@ api.onPageChange(() => {
 });
 
 
+// 移動#new-create-topic按鈕位置到header icon (不用了但留著參考)
+*api.onPageChange(() => {
+  const toggle = document.querySelector('#new-create-topic');
+  const icons = document.querySelector('.d-header-icons');
+
+  if (toggle && icons && !document.querySelector('#new-create-topic-li')) {
+    // 包裝成 li
+    const li = document.createElement('li');
+    li.className = '#new-create-topic-li #new-create-topic';
+    li.appendChild(toggle);
+
+    // 插入到第1個位置（index = 0）
+    const position = 0;
+    const children = icons.children;
+
+    if (children.length >= position) {
+      icons.insertBefore(li, children[position]);
+    } else {
+      icons.appendChild(li);
+    }
+  }
+});
+
 });
