@@ -282,26 +282,22 @@ api.onPageChange(() => {
 
 
 // 移動#new-create-topic按鈕位置到header icon (不用了但留著參考)
-*api.onPageChange(() => {
-  const toggle = document.querySelector('#new-create-topic');
-  const icons = document.querySelector('.d-header-icons');
-
-  if (toggle && icons && !document.querySelector('#new-create-topic-li')) {
-    // 包裝成 li
-    const li = document.createElement('li');
-    li.className = '#new-create-topic-li #new-create-topic';
-    li.appendChild(toggle);
-
-    // 插入到第1個位置（index = 0）
-    const position = 0;
-    const children = icons.children;
-
-    if (children.length >= position) {
-      icons.insertBefore(li, children[position]);
-    } else {
-      icons.appendChild(li);
-    }
+document.addEventListener("DOMContentLoaded", function() {
+  const buttonDiv = document.querySelector(".fk-d-button-tooltip");
+  const ulIcons = document.querySelector(".icons.d-header-icons");
+  
+  if (buttonDiv && ulIcons) {
+    // 建一個新的 <li>
+    const newLi = document.createElement("li");
+    newLi.className = "custom-header-icon-link header-icon-create-topic";
+    
+    // 把按鈕移進新的 <li>
+    newLi.appendChild(buttonDiv.querySelector("button"));
+    
+    // 把新的 <li> 插進 <ul>
+    ulIcons.insertBefore(newLi, ulIcons.firstChild); // 插在最前面
   }
 });
+
 
 });
