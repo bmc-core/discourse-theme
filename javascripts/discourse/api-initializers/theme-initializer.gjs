@@ -271,14 +271,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // 把Serchbar塞進Header
-/*api.onPageChange(() => {
+api.onPageChange(() => {
   const searchMenu = document.querySelector('.search-menu');
   const beforeHeaderPanel = document.querySelector('.before-header-panel-outlet');
 
   if (searchMenu && beforeHeaderPanel && !beforeHeaderPanel.querySelector('.search-menu')) {
     beforeHeaderPanel.appendChild(searchMenu);
   }
-});*/
+});
 
 
 });
