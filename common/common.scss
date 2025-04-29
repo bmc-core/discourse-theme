@@ -295,9 +295,15 @@ li .current {
     color: var(--header_background);
 }
 
+/*搜尋欄Header常駐*/
 /*搜尋欄的icon*/
 .search-menu .searching .show-advanced-search .d-icon {
     color: var(--header_primary-low-mid);
+}
+
+.search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
+    width: 600px;
+    height: auto;
 }
 
 /*Heading的Create topic*/
