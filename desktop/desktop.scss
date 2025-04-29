@@ -102,28 +102,12 @@ body.has-sidebar-page #main-outlet {
 body:not(.has-sidebar-page) #main-outlet {
     transform: translateX(0);
 }
+*/
 
 //Admin panel按鈕往右移
 .header-sidebar-toggle {
     order: 1;
-  }*/
+  }
 
-  /* === 主容器包住 main 和 sidebar === */
-#main-outlet-wrapper {
-    position: relative;
-    padding: 2em 5%;
-    transition: transform 0.5s ease;
-    display: flex; /* 可以橫向排列 main 和 sidebar */
-  }
-  
-  /* === sidebar 開啟時 === */
-  body.has-sidebar-page .sidebar-container {
-    transform: translateX(0); /* 滑進來 */
-  }
-  
-  /* === main-outlet-wrapper 在 sidebar 出現時往左推 === */
-  body.has-sidebar-page #main-outlet-wrapper {
-    transform: translateX(-10em); /* 往左推 sidebar 寬度 */
-  }
   
   
