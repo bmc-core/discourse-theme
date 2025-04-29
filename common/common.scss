@@ -593,10 +593,15 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 
 /*首頁的category區*/
 
+.category-list .topics .badge-notification {
+    color: #ffd306;
+    text-align: center;
+}
+
 /*Topic欄位顯示方式*/
-.category-list .topics .value {
+/*.category-list .topics .value {
     color:#FFD306;
-} 
+} */
 
 .container.list-container {
     padding: 0 2em;
