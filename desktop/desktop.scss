@@ -77,8 +77,25 @@ body.sidebar-animate #main-outlet-wrapper {
     
 body.has-sidebar-page #main-outlet-wrapper {
     grid-template-areas: "content sidebar";
-    grid-template-columns: 1.05fr 0px !important;
     padding: 2em 5%;
-    grid-template-columns: 1fr !important;
+    grid-template-columns: minmax(0, 1fr) !important;
+    padding-right: 20em;
+    //grid-template-columns: 1fr !important;
     grid-template-areas: "content" !important;
 }
+
+/* ====== 新增動畫用的 ====== */
+body #main-outlet {
+    transition: transform 0.4s ease; /* 加 transition */
+}
+  
+/* 當 sidebar 開啟時 */
+body.has-sidebar-page #main-outlet {
+    transform: translateX(-20px); /* 左推 20px */
+}
+
+/* 當 sidebar 關閉時 */
+body:not(.has-sidebar-page) #main-outlet {
+    transform: translateX(0);
+}
+  
