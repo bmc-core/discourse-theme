@@ -107,21 +107,9 @@ body #main-outlet {
 body:not(.has-sidebar-page) #main-outlet {
     transform: translateX(0);
 }
-  
 
 .dashboard-next .section-columns .section-column:last-child {
     margin: 0 2em 0 2em;
-}
-  
-.dashboard-next .section-columns .section-column:last-child ::before {
-    content: "";
-    position: absolute;
-    /* top: 0; */
-    align-content: center;
-    width: 2px;
-    height: 662.22px;
-    background-color: var(--header_primary-low-mid);
-    right: 49%;
 }
 
 .dashboard-next .charts .chart-canvas-container {
