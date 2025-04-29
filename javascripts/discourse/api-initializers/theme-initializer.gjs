@@ -282,25 +282,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // 移動#new-create-topic按鈕位置到header icon
-document.addEventListener("DOMContentLoaded", function() {
-  const buttonDiv = document.querySelector(".fk-d-button-tooltip");
-  const ulIcons = document.querySelector(".icons.d-header-icons");
+document.addEventListener("DOMContentLoaded", function () {
+  const buttonWrapper = document.querySelector(".fk-d-button-tooltip");
+  const panel = document.querySelector(".panel");
+  const ulIcons = panel?.querySelector(".icons.d-header-icons");
 
-  if (buttonDiv && ulIcons) {
-    const button = buttonDiv.querySelector("button");
+  if (buttonWrapper && panel && ulIcons) {
+    const button = buttonWrapper.querySelector("button");
 
-    // ✅ 替換原本的 class，模仿 header 的 icon 樣式
+    // ✅ 修改按鈕樣式，讓它和 header icon 一致
     button.className = "btn no-text btn-icon icon btn-flat";
-    
-    // ✅ 建新的 <li>
+
+    // ✅ 用一個新的 <li> 包裹整個 buttonWrapper
     const newLi = document.createElement("li");
     newLi.className = "header-dropdown-toggle header-icon-create-topic";
+    newLi.appendChild(buttonWrapper); // 加入整個 div
 
-    // ✅ 移動按鈕進入新 <li>
-    newLi.appendChild(button);
-
-    // ✅ 插入
-
-
+    // ✅ 插入到 <ul> 中（可選擇位置）
+    ulIcons.insertBefore(newLi, ulIcons.firstChild); // 放第一個
+  }
+});
 
 });
