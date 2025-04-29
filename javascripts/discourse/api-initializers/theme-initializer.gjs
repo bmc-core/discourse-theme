@@ -69,7 +69,7 @@ function interpolateColor(color1, color2, factor) {
 
 // 移動header-sidebar-toggle位置
 
-api.onPageChange(() => {
+/*api.onPageChange(() => {
   const toggle = document.querySelector('.header-sidebar-toggle');
   const icons = document.querySelector('.d-header-icons');
 
@@ -89,7 +89,7 @@ api.onPageChange(() => {
       icons.appendChild(li);
     }
   }
-});
+});*/
 
 
 //popup訊息存在與否，預覽畫面的變化
