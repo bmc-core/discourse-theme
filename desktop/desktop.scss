@@ -18,6 +18,7 @@ body.has-sidebar-page .wrap {
     max-width: 90vw;
 }
 
+/*----------------------------------*/
 // DM
 .chat-drawer-outlet-container {
     //position: absolute;
@@ -34,6 +35,7 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
     pointer-events: none;
 }
 
+/*----------------------------------*/
 //回文的popup訊息
 .composer-popup {
     right: 90px;
@@ -65,10 +67,12 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
     margin-left: 1em;
 }
 
+/*----------------------------------*/
 //sidebar 出現時往左推
 body #main-outlet-wrapper {
     grid-template-areas: "content sidebar";
     grid-template-columns: minmax(0, 1fr);
+    transition: grid-template-columns 0.4s ease; /* 加平滑動畫 */
 }
     
 body.sidebar-animate #main-outlet-wrapper {
@@ -78,23 +82,23 @@ body.sidebar-animate #main-outlet-wrapper {
 body.has-sidebar-page #main-outlet-wrapper {
     grid-template-areas: "content sidebar";
     padding: 2em 5%;
-    grid-template-columns: minmax(0, 1fr) !important;
-    padding-right: 20em;
+    grid-template-columns: minmax(0, 1fr) 20em;
+    transition: grid-template-columns 0.4s ease; /* 讓 sidebar 寬度變化有動畫 */
     //grid-template-columns: 1fr !important;
-    grid-template-areas: "content" !important;
+    //grid-template-areas: "content" !important;
 }
 
 /* ====== 新增動畫用的 ====== */
+// Main內容滑動
 body #main-outlet {
-    transition: transform 0.4s ease; /* 加 transition */
-}
-  
-/* 當 sidebar 開啟時 */
-body.has-sidebar-page #main-outlet {
-    transform: translateX(-20px); /* 左推 20px */
+    transition: transform 0.4s ease; /* 平滑移動 */
 }
 
-/* 當 sidebar 關閉時 */
+body.has-sidebar-page #main-outlet {
+    transform: translateX(-20px); /* 左推 20px，可自己調整 */
+}
+
+/* 收回時也滑順 */
 body:not(.has-sidebar-page) #main-outlet {
     transform: translateX(0);
 }
