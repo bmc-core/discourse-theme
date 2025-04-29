@@ -94,18 +94,18 @@ body.has-sidebar-page #main-outlet-wrapper {
 /*----------------------------------*/
 /* ====== 新增動畫用的 ====== */
 // Main內容滑動
-/*
+
 body #main-outlet {
     transition: transform 0.5s ease; // 平滑移動
 }
 
-body.has-sidebar-page #main-outlet {
-    transform: translateX(-20px); // 左推 20px，可自己調整
-}
+/*body.has-sidebar-page #main-outlet {
+    transform: translateX(-20px); // 左推 20px
+}*/
 
 //收回時也滑順
 body:not(.has-sidebar-page) #main-outlet {
     transform: translateX(0);
-}*/
+}
   
   
