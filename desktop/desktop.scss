@@ -69,7 +69,7 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
 
 /*----------------------------------*/
 //sidebar 出現時往左推
-/*
+
 body #main-outlet-wrapper {
     grid-template-areas: "content sidebar";
     grid-template-columns: minmax(0, 1fr);
@@ -85,8 +85,13 @@ body.has-sidebar-page #main-outlet-wrapper {
     grid-template-columns: minmax(0, 1fr) 10em;
     transition: grid-template-columns 0.5s ease; //讓 sidebar 寬度變化有動畫
    }
-*/
 
+//Admin panel按鈕往右移
+.header-sidebar-toggle {
+    order: 1;
+  }
+
+/*----------------------------------*/
 /* ====== 新增動畫用的 ====== */
 // Main內容滑動
 /*
@@ -101,13 +106,6 @@ body.has-sidebar-page #main-outlet {
 //收回時也滑順
 body:not(.has-sidebar-page) #main-outlet {
     transform: translateX(0);
-}
-*/
-
-//Admin panel按鈕往右移
-.header-sidebar-toggle {
-    order: 1;
-  }
-
+}*/
   
   
