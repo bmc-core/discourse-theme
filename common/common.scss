@@ -346,6 +346,7 @@ li .current {
     border: 0px solid rgba(0, 0, 0, 0);
     outline: none;
         .d-icon{
+        padding-top: 5px;
         width: 20px;
         height: 20px;
         display: inline-block;
@@ -357,6 +358,11 @@ li .current {
             .d-icon {
             color: var(--tertiary);}
     }
+}
+
+/*Headind的AI Rot*/
+svg.fa.d-icon.d-icon-robot.svg-icon.svg-string {
+    width: 25px;
 }
 
 /*一般的create-category*/
