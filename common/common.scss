@@ -306,6 +306,31 @@ li .current {
     height: auto;
 }
 
+.before-header-panel-outlet {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* 讓搜尋框和按鈕有點間距 */
+}
+  
+.before-header-panel-outlet .search-menu {
+    display: flex;
+    align-items: center;
+}
+  
+.before-header-panel-outlet .search-term__input {
+    height: 32px;
+    padding: 0 10px;
+    font-size: 14px;
+}
+  
+.before-header-panel-outlet .search-menu-container {
+    position: static;
+}
+  
+.before-header-panel-outlet .searching {
+    margin-left: 5px;
+}
+
 /*Heading的Create topic*/
 #new-create-topic {
     background-color: var(--header_background);
