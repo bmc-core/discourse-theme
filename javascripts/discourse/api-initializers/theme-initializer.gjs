@@ -271,13 +271,12 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // 把Serchbar塞進Header
-// 等到 Discourse 的 DOM 都加載完畢
 api.onPageChange(() => {
   const searchMenu = document.querySelector('.search-menu');
-  const header = document.querySelector('#d-header');
+  const beforeHeaderPanel = document.querySelector('.before-header-panel-outlet');
 
-  if (searchMenu && header && !header.querySelector('.search-menu')) {
-    header.appendChild(searchMenu); 
+  if (searchMenu && beforeHeaderPanel && !beforeHeaderPanel.querySelector('.search-menu')) {
+    beforeHeaderPanel.appendChild(searchMenu);
   }
 });
 
