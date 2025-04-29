@@ -184,6 +184,8 @@ a.tag-topics__topic-link {
     //z-index: 0;
     background: transparent;
     //flex: none !important; // 避免它被 flex 布局當成正常項目
+    transform: translateX(100%); /* 隱藏在右邊 */
+    transition: transform 0.5s ease;
 }
 
 .admin-area .sidebar-wrapper .admin-panel {

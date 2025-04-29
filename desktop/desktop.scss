@@ -116,20 +116,6 @@ body:not(.has-sidebar-page) #main-outlet {
     display: flex; /* 可以橫向排列 main 和 sidebar */
   }
   
-  /* === sidebar 設定 === */
-  .sidebar-container {
-    width: 10em;
-    min-width: 10em;
-    background: #f3f3f3;
-    height: 100vh;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translateX(100%); /* 隱藏在右邊 */
-    transition: transform 0.5s ease;
-    z-index: 1000;
-  }
-  
   /* === sidebar 開啟時 === */
   body.has-sidebar-page .sidebar-container {
     transform: translateX(0); /* 滑進來 */
