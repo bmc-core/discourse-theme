@@ -72,6 +72,10 @@ a.tag-topics__topic-link {
     }
 }
 
+@media screen and (min-width: 767px) {
+        background-size:125px;
+}
+
 #topic-title h1 {
     text-transform: capitalize;
     padding-bottom: 5px;
