@@ -72,7 +72,7 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
 body #main-outlet-wrapper {
     grid-template-areas: "content sidebar";
     grid-template-columns: minmax(0, 1fr);
-    transition: grid-template-columns 1s ease; /* 加平滑動畫 */
+    transition: grid-template-columns 0.5s ease; /* 加平滑動畫 */
 }
     
 body.sidebar-animate #main-outlet-wrapper {
@@ -83,7 +83,7 @@ body.has-sidebar-page #main-outlet-wrapper {
     grid-template-areas: "content sidebar";
     padding: 2em 5%;
     grid-template-columns: minmax(0, 1fr) 10em;
-    transition: grid-template-columns 1s ease; /* 讓 sidebar 寬度變化有動畫 */
+    transition: grid-template-columns 0.5s ease; /* 讓 sidebar 寬度變化有動畫 */
     //grid-template-columns: 1fr !important;
     //grid-template-areas: "content" !important;
 }
@@ -91,7 +91,7 @@ body.has-sidebar-page #main-outlet-wrapper {
 /* ====== 新增動畫用的 ====== */
 // Main內容滑動
 body #main-outlet {
-    transition: transform 1s ease; /* 平滑移動 */
+    transition: transform 0.5s ease; /* 平滑移動 */
 }
 
 body.has-sidebar-page #main-outlet {
