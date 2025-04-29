@@ -65,19 +65,20 @@ button.btn.no-text.btn-icon.btn-transparent.no-text.c-navbar__full-page-button {
     margin-left: 1em;
 }
 
-//body #main-outlet-wrapper {
-    //grid-template-areas: "content sidebar";
-    //grid-template-columns: minmax(0, 1fr);
-//}
+//sidebar 出現時往左推
+body #main-outlet-wrapper {
+    grid-template-areas: "content sidebar";
+    grid-template-columns: minmax(0, 1fr);
+}
     
-//body.sidebar-animate #main-outlet-wrapper {
-    //grid-template-areas: "content sidebar";
-//}
+body.sidebar-animate #main-outlet-wrapper {
+    grid-template-areas: "content sidebar";
+}
     
-//body.has-sidebar-page #main-outlet-wrapper {
-    //grid-template-areas: "content sidebar";
-    //grid-template-columns: minmax(0, 1fr) 0px !important;
-    //padding: 2em 5%;
-    //grid-template-columns: 1fr !important;
-    //grid-template-areas: "content" !important;
-//}
+body.has-sidebar-page #main-outlet-wrapper {
+    grid-template-areas: "content sidebar";
+    grid-template-columns: minmax(0, 1fr) 0px !important;
+    padding: 2em 5%;
+    grid-template-columns: 1fr !important;
+    grid-template-areas: "content" !important;
+}
