@@ -321,22 +321,9 @@ li .current {
     align-items: center;
     gap: 1rem; /* 讓搜尋框和按鈕有點間距 */
     margin: 0;
-    margin-right: auto;
-    padding-left: 4vw;
+    padding-inline-start: 150px;
+    margin-inline-end: auto;
 }
-  /* 小螢幕（手機）時保底 161.25px */
-  @media (max-width: 600px) {
-    .before-header-panel-outlet {
-      padding-left: 161.25px;
-    }
-  }
-  
-  /* 超大螢幕時封頂 420px */
-  @media (min-width: 2480px) {
-    .before-header-panel-outlet {
-      padding-left: 420px;
-    }
-  }
 
 .d-header .hamburger-panel, .d-header .user-menu, .d-header .search-menu {
     width: auto;
