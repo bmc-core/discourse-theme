@@ -320,8 +320,8 @@ li .current {
 
 .search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
     //height: auto;
-    max-width: 600px;
-    width: 600px;
+    max-width: 500px;
+    width: 500px;
 }
 
 .before-header-panel-outlet {
@@ -329,6 +329,10 @@ li .current {
     align-items: center;
     gap: 1rem; /* 讓搜尋框和按鈕有點間距 */
     margin: 0;
+}
+
+.before-header-panel-outlet+.panel {
+    margin-right: 0;
 }
 
 /*@media (max-width: 1920px) {
