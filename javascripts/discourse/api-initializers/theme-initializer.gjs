@@ -273,12 +273,20 @@ document.addEventListener('DOMContentLoaded', function () {
 //移動searchbar到header
 document.addEventListener("DOMContentLoaded", function () {
   const searchMenu = document.querySelector(".welcome-banner__wrap .search-menu");
-  const insertTarget = document.querySelector(".drop-down-mode .d-header .contents");
+  const container = document.querySelector(".drop-down-mode .d-header .contents");
 
-  if (searchMenu && insertTarget) {
-    insertTarget.prepend(searchMenu); // 或用 appendChild() 視你想要前面還是後面
+  if (searchMenu && container) {
+    const allDivs = container.querySelectorAll("div");
+
+    // 如果至少有2個元素，插入在第2個之後（變成第3個）
+    if (allDivs.length >= 2) {
+      container.insertBefore(searchMenu, allDivs[2]);
+    } else {
+      container.appendChild(searchMenu); // 如果不足，直接放最後
+    }
   }
 });
+
 
 
 // 移動#new-create-topic按鈕位置到header icon
