@@ -278,6 +278,19 @@ window.addEventListener('DOMContentLoaded', function () {
     if (searchMenu && target) {
       target.appendChild(searchMenu); // 將整個區塊移入
     }
+
+// 初始執行一次
+moveSearchBar();
+
+// 監聽 DOM 變化
+const observer = new MutationObserver(() => {
+  moveSearchBar();
+});
+
+// 監聽整個 body 的變化（可視情況調整範圍）
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
 });
 
 
