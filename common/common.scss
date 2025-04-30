@@ -846,7 +846,7 @@ table th {
     background:	#FFD306;
 }
 
-timeline-date-wrapper {
+.post-voting-topic .time-gap, .post-voting-topic .topic-post-visited-line, .post-voting-topic .timeline-date-wrapper, .post-voting-topic .timeline-last-read, .post-voting-topic .timeline-ago, .post-voting-topic-sort-by-activity .time-gap, .post-voting-topic-sort-by-activity .topic-post-visited-line, .post-voting-topic-sort-by-activity .timeline-date-wrapper, .post-voting-topic-sort-by-activity .timeline-last-read, .post-voting-topic-sort-by-activity .timeline-ago {
     display: flex;
 }
 
