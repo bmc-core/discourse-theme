@@ -949,6 +949,10 @@ table th {
     border-radius: 20%;
 }
 
+.user-main .about .details {
+    background: rgba(var(--secondary-rgb), 0);
+}
+
 .user-main .about.collapsed-info .controls {
     background: rgba(0,0,0,0.5);
 }
