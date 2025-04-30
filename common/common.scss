@@ -312,8 +312,9 @@ li .current {
 }
 
 .search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
-    width: 600px;
-    height: auto;
+    //width: 600px;
+    //height: auto;
+    max-width: 600px;
     min-width: 200px;
 }
 
@@ -328,7 +329,7 @@ li .current {
 
 @media (max-width: 600px) {
     .before-header-panel-outlet {
-        padding-inline-start: 20px;
+        padding-inline-start: 0;
         margin-inline-end: auto;
     }
     .search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
