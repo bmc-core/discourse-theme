@@ -270,35 +270,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
-// 把Serchbar塞進Header
-function moveSearchBar() {
-  const searchMenu = document.querySelector('.search-menu.welcome-banner__search-menu');
-  const target = document.querySelector('.before-header-panel-outlet');
-
-  if (searchMenu && target && !target.contains(searchMenu)) {
-    target.appendChild(searchMenu);
-
-    const originalContainer = document.querySelector('.welcome-banner'); // 假設是這個容器
-    if (originalContainer && originalContainer.contains(searchMenu)) {
-      originalContainer.innerHTML = ''; // 或者 originalContainer.removeChild(searchMenu);
-      }
-  }
-}
-
-// 初始執行一次
-moveSearchBar();
-
-// 監聽 DOM 變化
-const observer = new MutationObserver(() => {
-  moveSearchBar();
-});
-
-// 監聽整個 body 的變化（可視情況調整範圍）
-observer.observe(document.body, {
-  childList: true,
-  subtree: true,
-});
-
 // 移動#new-create-topic按鈕位置到header icon
 document.addEventListener("DOMContentLoaded", function () {
   const buttonWrapper = document.querySelector(".fk-d-button-tooltip");
