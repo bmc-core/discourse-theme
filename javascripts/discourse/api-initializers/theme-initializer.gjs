@@ -271,13 +271,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // 把Serchbar塞進Header
-window.addEventListener('DOMContentLoaded', function () {
-    const searchMenu = document.querySelector('.search-menu.welcome-banner__search-menu');
-    const target = document.querySelector('.before-header-panel-outlet');
+function moveSearchBar() {
+  const searchMenu = document.querySelector('.search-menu.welcome-banner__search-menu');
+  const target = document.querySelector('.before-header-panel-outlet');
 
-    if (searchMenu && target) {
-      target.appendChild(searchMenu); // 將整個區塊移入
-    }
+  if (searchMenu && target && !target.contains(searchMenu)) {
+    target.appendChild(searchMenu);
+  }
+}
 
 // 初始執行一次
 moveSearchBar();
@@ -292,6 +293,7 @@ observer.observe(document.body, {
   childList: true,
   subtree: true,
 });
+
 
 
 // 移動#new-create-topic按鈕位置到header icon
