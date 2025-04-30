@@ -294,8 +294,6 @@ observer.observe(document.body, {
   subtree: true,
 });
 
-
-
 // 移動#new-create-topic按鈕位置到header icon
 document.addEventListener("DOMContentLoaded", function () {
   const buttonWrapper = document.querySelector(".fk-d-button-tooltip");
