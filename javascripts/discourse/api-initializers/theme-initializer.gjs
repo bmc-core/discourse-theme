@@ -309,5 +309,18 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 });
 
+//Signup & Login不顯示按鈕
+document.addEventListener("DOMContentLoaded", function () {
+  const path = window.location.pathname;
+  if (path === "/signup" || path === "/login") {
+    const linkedinButton = document.querySelector(
+      'li.custom-header-icon-link.header-icon-desktop-and-mobile-link.vdm.last-custom-icon'
+    );
+    if (linkedinButton) {
+      linkedinButton.style.display = "none";
+    }
+  }
+});
+
 
 });
