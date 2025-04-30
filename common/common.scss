@@ -314,6 +314,7 @@ li .current {
 .search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
     width: 600px;
     height: auto;
+    min-width: 200px;
 }
 
 .before-header-panel-outlet {
@@ -324,6 +325,12 @@ li .current {
     padding-inline-start: 150px;
     margin-inline-end: auto;
 }
+
+@media (max-width: 600px) {
+    .before-header-panel-outlet {
+      padding-left: 20px; /* 或其他適合手機的數值 */
+    }
+  }
 
 .d-header .hamburger-panel, .d-header .user-menu, .d-header .search-menu {
     width: auto;
