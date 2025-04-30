@@ -313,9 +313,7 @@ li .current {
 
 .d-header .search-menu {
     width: auto;
-    position: absolute;
-    display: flex
-;
+    display: flex;
     align-items: center;
     padding-inline: 25vw;
 }
@@ -323,6 +321,7 @@ li .current {
 .search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
     //height: auto;
     max-width: 600px;
+    width: 600px;
 }
 
 .before-header-panel-outlet {
