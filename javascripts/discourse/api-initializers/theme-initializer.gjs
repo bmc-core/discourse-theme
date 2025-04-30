@@ -271,7 +271,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //移動searchbar到header
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   const searchMenu = document.querySelector(".welcome-banner__wrap .search-menu");
   const container = document.querySelector(".drop-down-mode .d-header .contents");
 
@@ -285,9 +285,7 @@ document.addEventListener("DOMContentLoaded", function () {
       container.appendChild(searchMenu); // 如果不足，直接放最後
     }
   }
-});
-
-
+});*/
 
 // 移動#new-create-topic按鈕位置到header icon
 document.addEventListener("DOMContentLoaded", function () {
