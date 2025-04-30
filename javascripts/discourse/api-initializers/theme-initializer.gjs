@@ -271,15 +271,15 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 //移動searchbar到header
-// 確保 DOM 加載完成
 document.addEventListener("DOMContentLoaded", function () {
   const searchMenu = document.querySelector(".welcome-banner__wrap .search-menu");
-  const target = document.querySelector(".drop-down-mode .d-header-wrap");
+  const insertTarget = document.querySelector(".drop-down-mode .d-header .contents");
 
-  if (searchMenu && target) {
-    target.appendChild(searchMenu);  // 將 searchMenu 移動到目標中
+  if (searchMenu && insertTarget) {
+    insertTarget.prepend(searchMenu); // 或用 appendChild() 視你想要前面還是後面
   }
 });
+
 
 // 移動#new-create-topic按鈕位置到header icon
 document.addEventListener("DOMContentLoaded", function () {
