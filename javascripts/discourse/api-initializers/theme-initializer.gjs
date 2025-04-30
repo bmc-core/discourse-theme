@@ -278,9 +278,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (searchMenu && container) {
     const allDivs = container.querySelectorAll("div");
 
-    // 如果至少有2個元素，插入在第2個之後（變成第3個）
-    if (allDivs.length >= 2) {
-      container.insertBefore(searchMenu, allDivs[2]);
+    // 如果至少有2個元素，插入在第3個之後（變成第4個）
+    if (allDivs.length >= 3) {
+      container.insertBefore(searchMenu, allDivs[3]);
     } else {
       container.appendChild(searchMenu); // 如果不足，直接放最後
     }
