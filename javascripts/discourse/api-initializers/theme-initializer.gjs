@@ -277,6 +277,11 @@ function moveSearchBar() {
 
   if (searchMenu && target && !target.contains(searchMenu)) {
     target.appendChild(searchMenu);
+
+    const originalContainer = document.querySelector('.welcome-banner'); // 假設是這個容器
+    if (originalContainer && originalContainer.contains(searchMenu)) {
+      originalContainer.innerHTML = ''; // 或者 originalContainer.removeChild(searchMenu);
+      }
   }
 }
 
