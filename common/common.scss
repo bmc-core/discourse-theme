@@ -311,11 +311,17 @@ li .current {
     color: var(--header_primary-low-mid);
 }
 
+.d-header .search-menu {
+    width: auto;
+    position: absolute;
+    display: flex
+;
+    align-items: center;
+    padding-inline: 25vw;
+
 .search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
-    width: 600px;
     //height: auto;
     max-width: 600px;
-    min-width: 200px;
 }
 
 .before-header-panel-outlet {
@@ -323,17 +329,11 @@ li .current {
     align-items: center;
     gap: 1rem; /* 讓搜尋框和按鈕有點間距 */
     margin: 0;
-    padding-inline-start: 150px;
-    margin-inline-end: auto;
 }
 
-@media (max-width: 1000px) {
-    .before-header-panel-outlet {
-        padding-inline-start: 0px;
-        margin-inline-end: auto;
-    }
+@media (max-width: 1920px) {
     .search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
-        width: 200px; 
+        width: 250px; 
     }
 }
 
