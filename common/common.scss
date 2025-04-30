@@ -976,3 +976,17 @@ table th {
 .dashboard-next .charts .chart-canvas {
     width: 100%;
 }
+
+.user-card, .group-card {
+    background: transparent;
+}
+
+.fk-d-menu__inner-content {
+    background-color: transparent;
+}
+
+.user-card .card-content, .group-card .card-content {
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(var(--secondary-rgb), 0.85);
+}
