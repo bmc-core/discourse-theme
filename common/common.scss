@@ -328,7 +328,7 @@ li .current {
     margin-inline-end: auto;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 300px) {
     .before-header-panel-outlet {
         padding-inline-start: 0;
         margin-inline-end: auto;
@@ -336,7 +336,7 @@ li .current {
     .search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
         width: 200px; 
     }
-  }
+}
 
 .d-header .hamburger-panel, .d-header .user-menu, .d-header .search-menu {
     width: auto;
