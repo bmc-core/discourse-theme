@@ -74,7 +74,7 @@ a.tag-topics__topic-link {
 
 @media screen and (min-width: 767px) {
     .welcome-banner__title {
-        background-size:125px;
+        background-size: 125px;
     }
 }
 
@@ -319,7 +319,27 @@ li .current {
 .before-header-panel-outlet {
     display: flex;
     align-items: center;
-    gap: 0.5rem; /* 讓搜尋框和按鈕有點間距 */
+    gap: 1rem; /* 讓搜尋框和按鈕有點間距 */
+    margin: 0;
+    margin-right: auto;
+    padding-left: 4vw;
+}
+  /* 小螢幕（手機）時保底 161.25px */
+  @media (max-width: 600px) {
+    .before-header-panel-outlet {
+      padding-left: 161.25px;
+    }
+  }
+  
+  /* 超大螢幕時封頂 420px */
+  @media (min-width: 1920px) {
+    .before-header-panel-outlet {
+      padding-left: 420px;
+    }
+  }
+
+/*.d-header .hamburger-panel, .d-header .user-menu, .d-header .search-menu {
+    width: auto;
 }
   
 .before-header-panel-outlet .search-menu {
@@ -334,12 +354,12 @@ li .current {
 }
   
 .before-header-panel-outlet .search-menu-container {
-    position: static;
+    position: relative;
 }
   
 .before-header-panel-outlet .searching {
     margin-left: 5px;
-}
+}*/
 
 /*Heading的Create topic*/
 #new-create-topic {
