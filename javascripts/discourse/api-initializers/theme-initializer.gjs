@@ -272,11 +272,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 // 把Serchbar塞進Header
 window.addEventListener('DOMContentLoaded', function () {
-    const searchContainer = document.querySelector('.search-menu welcome-banner__search-menu');
-    const targetContainer = document.querySelector('.before-header-panel-outlet');
+    const searchMenu = document.querySelector('.search-menu.welcome-banner__search-menu');
+    const target = document.querySelector('.before-header-panel-outlet');
 
-    if (searchContainer && targetContainer) {
-      targetContainer.appendChild(searchContainer);
+    if (searchMenu && target) {
+      target.appendChild(searchMenu); // 將整個區塊移入
     }
 });
 
