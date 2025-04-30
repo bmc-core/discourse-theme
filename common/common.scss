@@ -328,7 +328,8 @@ li .current {
 
 @media (max-width: 600px) {
     .before-header-panel-outlet {
-      padding-left: 20px; /* 或其他適合手機的數值 */
+        padding-inline-start: 20px;
+        margin-inline-end: auto;
     }
   }
 
