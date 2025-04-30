@@ -332,7 +332,7 @@ li .current {
   }
   
   /* 超大螢幕時封頂 420px */
-  @media (min-width: 1920px) {
+  @media (min-width: 2480px) {
     .before-header-panel-outlet {
       padding-left: 420px;
     }
