@@ -271,14 +271,14 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 // 把Serchbar塞進Header
-/*api.onPageChange(() => {
-  const searchMenu = document.querySelector('.search-menu');
-  const beforeHeaderPanel = document.querySelector('.before-header-panel-outlet');
+window.addEventListener('DOMContentLoaded', function () {
+    const searchContainer = document.querySelector('.search-menu-container.menu-panel-results');
+    const targetContainer = document.querySelector('.before-header-panel-outlet');
 
-  if (searchMenu && beforeHeaderPanel && !beforeHeaderPanel.querySelector('.search-menu')) {
-    beforeHeaderPanel.appendChild(searchMenu);
-  }
-});*/
+    if (searchContainer && targetContainer) {
+      targetContainer.appendChild(searchContainer);
+    }
+});
 
 
 // 移動#new-create-topic按鈕位置到header icon
