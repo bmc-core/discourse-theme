@@ -450,7 +450,7 @@ button#create-category {
 
 //救救icon
 li.custom-header-icon-link.header-icon-openbmc-gerrit.vdm.last-custom-icon {
-    fill: currentColor;
+    fill: var(--header_primary-low-mid);
     &:hover,
     &:focus {
         fill: var(--tertiary);  
