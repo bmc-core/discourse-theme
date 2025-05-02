@@ -999,7 +999,7 @@ table th {
     display: grid;
     grid-template-columns: 33% repeat(4, minmax(80px, 1fr)); /* 控制欄寬避免太窄 */
     flex: 1 0 auto;
-    min-width: 500px;
+    min-width: 200px;
     border: 1px solid var(--primary-low);
     border-bottom: 0;
     font-weight: 700;
@@ -1010,6 +1010,8 @@ table th {
 }
 
 .counters-cell {
+    max-width: 60px;
+    justify-self: end;
     word-break: break-word;
     overflow-wrap: break-word;
   }
