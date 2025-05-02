@@ -63,6 +63,7 @@ a.tag-topics__topic-link {
         box-sizing: border-box;
         float: right;
     }
+    
 }
 
 @media screen and (min-width: 767px) {
@@ -111,7 +112,7 @@ a.tag-topics__topic-link {
 
 #main-outlet {
     max-width: 1280px;
-    width: 100%;
+    width: calc(100% - 200px);
     margin: 0 auto;
     padding: 1em;
 }
@@ -973,9 +974,45 @@ table th {
     background-color: transparent;
 }
 
+.dashboard-next .section .section-title {
+    display: block;
+}
+
 .dashboard-next .charts .chart-canvas {
     width: 100%;
 }
+
+.dashboard-next .section-columns .section-column {
+    min-width: calc(50% - .5em) !important;
+    max-width: 100%;
+}
+
+.activity-metrics {
+    margin: 2em;
+}
+
+.counters-list {
+    overflow-x: auto;        /* 讓整列可以水平滾動 */
+  }
+
+.counters-list .counters-header {
+    display: grid;
+    grid-template-columns: 33% repeat(4, minmax(80px, 1fr)); /* 控制欄寬避免太窄 */
+    flex: 1 0 auto;
+    min-width: 500px;
+    border: 1px solid var(--primary-low);
+    border-bottom: 0;
+    font-weight: 700;
+    text-align: right;
+    align-items: center;
+    padding: .65em .25em;
+    white-space: normal; 
+}
+
+.counters-cell {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
 
 .user-card, .group-card {
     background: transparent;
