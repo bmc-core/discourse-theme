@@ -312,15 +312,16 @@ document.addEventListener("DOMContentLoaded", function () {
 //Signup & Login不顯示按鈕
 document.addEventListener("DOMContentLoaded", function () {
   const path = window.location.pathname;
-  if (path === "/signup" || path === "/login") {
-    const linkedinButton = document.querySelector(
-      'icons d-header-icons'
-    );
-    if (linkedinButton) {
-      linkedinButton.style.display = "none";
+  const isAuthPage = path === "/signup" || path === "/login";
+
+  const currentUser = window?.Discourse?.User?.current();
+
+  if (!currentUser && isAuthPage) {
+    const headerIcons = document.querySelector("ul.icons.d-header-icons");
+    if (headerIcons) {
+      headerIcons.style.display = "none";
     }
   }
 });
-
 
 });
