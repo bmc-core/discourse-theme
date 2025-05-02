@@ -327,14 +327,13 @@ api.onPageChange(() => {
 
 //救救圖示
 api.onPageChange(() => {
-    document.querySelectorAll('.fa-chart-bar, .fa-poll-h').forEach(el => {
+    document.querySelectorAll('.fa-poll-h, .fa-chart-bar').forEach(el => {
       el.outerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" height="20" width="20" aria-hidden="true" class="custom-poll-icon">
-          <path fill="currentColor" fill-rule="evenodd" d="M5 3c-1.10457 0 -2 0.89543 -2 2v14c0 1.1046 0.89543 2 2 2h14c1.1046 0 2 -0.8954 2 -2V5c0 -1.10457 -0.8954 -2 -2 -2H5Zm0 2h14v14H5V5Zm2 6.25h6v-1.5H7v1.5Zm6 -3H7v-1.5h6v1.5Zm-0.9697 5.2197 -0.5303 -0.5304 -0.5303 0.5304 -3.00003 3 1.06066 1.0606L11.5 15.0607l1.9697 1.9696 0.5303 0.5304 0.5303 -0.5304 3 -3 -1.0606 -1.0606L14 15.4393l-1.9697 -1.9696Z" clip-rule="evenodd"/>
+        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" class="icon-poll-horizontal">
+          <path d="M64 64C64 46.3 78.3 32 96 32H352c17.7 0 32 14.3 32 32V96H64V64zM64 128H384V448c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V128zM192 192c8.8 0 16 7.2 16 16V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V208c0-8.8 7.2-16 16-16zm80 48c0-8.8 7.2-16 16-16s16 7.2 16 16V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V240zm-112 80c8.8 0 16 7.2 16 16V400c0 8.8-7.2 16-16 16s-16-7.2-16-16V336c0-8.8 7.2-16 16-16z"/>
         </svg>
       `;
     });
   });
-
 
 });
