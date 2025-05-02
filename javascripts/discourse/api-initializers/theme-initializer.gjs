@@ -310,18 +310,20 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 //Signup & Login不顯示按鈕
-document.addEventListener("DOMContentLoaded", function () {
+api.onPageChange(() => {
   const path = window.location.pathname;
+  const currentUser = api.getCurrentUser();
+
   const isAuthPage = path === "/signup" || path === "/login";
+  const isLoggedOut = !currentUser;
 
-  const currentUser = window?.Discourse?.User?.current();
-
-  if (!currentUser && isAuthPage) {
+  if (isAuthPage || isLoggedOut) {
     const headerIcons = document.querySelector("ul.icons.d-header-icons");
     if (headerIcons) {
       headerIcons.style.display = "none";
     }
   }
 });
+
 
 });
