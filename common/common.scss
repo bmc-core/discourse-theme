@@ -975,6 +975,10 @@ table th {
     border-radius: 20%;
 }
 
+.user-main .about.collapsed-info .details {
+    background: transparent;
+}
+
 .user-main .about .details {
     background: rgba(var(--secondary-rgb), 0);
 }
@@ -1050,3 +1054,4 @@ table th {
     border-radius: 10px;
     background: rgba(var(--secondary-rgb), 0.85);
 }
+
