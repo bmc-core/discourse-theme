@@ -448,6 +448,15 @@ button#create-category {
      }
 }
 
+//救救icon
+li.custom-header-icon-link.header-icon-openbmc-gerrit.vdm.last-custom-icon {
+    fill: currentColor;
+    &:hover,
+    &:focus {
+        fill: var(--tertiary);  
+    }
+}
+
 .discourse-no-touch .btn {
     transition: all .3s ease-out;
     &:hover,
