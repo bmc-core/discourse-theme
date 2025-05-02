@@ -314,7 +314,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const path = window.location.pathname;
   if (path === "/signup" || path === "/login") {
     const linkedinButton = document.querySelector(
-      'li.custom-header-icon-link.header-icon-desktop-and-mobile-link.vdm.last-custom-icon'
+      'icons d-header-icons'
     );
     if (linkedinButton) {
       linkedinButton.style.display = "none";
