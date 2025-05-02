@@ -449,12 +449,20 @@ button#create-category {
 }
 
 //救救icon
-li.custom-header-icon-link.header-icon-openbmc-gerrit.vdm.last-custom-icon .svg-icon {
+li.custom-header-icon-link.header-icon-openbmc-gerrit.vdm.last-custom-icon {
     fill: var(--header_primary-low-mid);
     &:hover,
     &:focus {
         fill: var(--tertiary);  
     }
+}
+
+svg {
+    fill: var(--header_primary-low-mid);
+    &:hover,
+    &:focus {
+        fill: var(--tertiary);  
+    } 
 }
 
 .discourse-no-touch .btn {
