@@ -734,8 +734,10 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 
 .category-boxes-with-topics .category-box-heading {
     /*category box heading文字*/
-    font: small-caps bold 18px/1 sans-serif;
+    //font: small-caps bold 18px/1 sans-serif;
     letter-spacing: 1px;
+    font: 1rem "Fira Sans", sans-serif;
+    text-transform: uppercase;
     //align-self: flex-start;
 }
 
