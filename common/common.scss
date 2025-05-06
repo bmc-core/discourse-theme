@@ -306,25 +306,6 @@ li .current {
     color: var(--header_background);
 }
 
-/*搜尋欄Header常駐*/
-/*搜尋欄的icon*/
-/*.search-menu .searching .show-advanced-search .d-icon {
-    color: var(--header_primary-low-mid);
-}
-
-.d-header .search-menu {
-    width: auto;
-    display: flex;
-    align-items: center;
-    //padding-inline: 25vw;
-}
-
-.search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
-    //height: auto;
-    max-width: 600px;
-    width: 600px;
-}*/
-
 .before-header-panel-outlet {
     display: flex;
     align-items: center;
@@ -337,11 +318,6 @@ li .current {
     margin-left: auto;
 }
 
-/*@media (max-width: 1920px) {
-    .search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
-        width: 250px; 
-    }
-}*/
 
 .d-header .hamburger-panel, .d-header .user-menu, .d-header .search-menu {
     width: auto;
@@ -586,6 +562,7 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 /*----------------分隔線--------------------*/
 
 /*首頁*/
+/*搜尋欄Header常駐*/
 
 /*搜尋欄*/
 search-menu .search-input, .search-menu-container .search-input {
@@ -599,6 +576,39 @@ search-menu .search-input, .search-menu-container .search-input {
     margin: 0px;
     padding: 0.25rem;
 }
+
+.d-header>.wrap .contents {
+    display: flex
+;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.search-menu.welcome-banner__search-menu {
+    flex: 1;
+    display: flex
+;
+    justify-content: center;
+    position: relative;
+}
+
+/*搜尋欄的icon*/
+/*.search-menu .searching .show-advanced-search .d-icon {
+    color: var(--header_primary-low-mid);
+}
+
+.d-header .search-menu {
+    width: auto;
+    display: flex;
+    align-items: center;
+    //padding-inline: 25vw;
+}*/
+
+.search-menu .search-input-wrapper, .search-menu-container .search-input-wrapper {
+    max-width: 600px;
+}
+
 
 /*首頁Welcome文字隱藏+Logo*/
 
