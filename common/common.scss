@@ -578,8 +578,7 @@ search-menu .search-input, .search-menu-container .search-input {
 }
 
 .d-header>.wrap .contents {
-    display: flex
-;
+    display: flex;
     align-items: center;
     justify-content: space-between;
     height: 100%;
@@ -587,18 +586,17 @@ search-menu .search-input, .search-menu-container .search-input {
 
 .search-menu.welcome-banner__search-menu {
     flex: 1;
-    display: flex
-;
+    display: flex;
     justify-content: center;
     position: relative;
 }
 
 /*搜尋欄的icon*/
-/*.search-menu .searching .show-advanced-search .d-icon {
+.search-menu .searching .show-advanced-search .d-icon {
     color: var(--header_primary-low-mid);
 }
 
-.d-header .search-menu {
+/*.d-header .search-menu {
     width: auto;
     display: flex;
     align-items: center;
