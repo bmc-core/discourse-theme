@@ -591,7 +591,13 @@ search-menu .search-input, .search-menu-container .search-input {
     position: relative;
 }
 
-/*搜尋欄的icon*/
+//搜尋欄框大小會縮放
+.search-menu.menu-panel-results, .search-menu-container.menu-panel-results {
+    position: relative;
+    width: 50%;
+}
+
+//搜尋欄的advance icon
 .search-menu .searching .show-advanced-search .d-icon {
     color: var(--header_primary-low-mid);
 }
