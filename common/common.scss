@@ -732,10 +732,8 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     text-align: center;
 }
 
-today {
-    &:hover {
-        background: var(--header_background);   
-    }  
+tbody :hover {
+    background: var(--header_background);    
 }
 
 .category-boxes-with-topics .category-box-heading {
