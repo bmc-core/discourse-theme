@@ -733,11 +733,9 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 }
 
 today {
-    tr {
-        &:hover {
-            background: rgba(0,0,0,0.5);   
-            }  
-    }
+    &:hover {
+        background: var(--header_background);   
+    }  
 }
 
 .category-boxes-with-topics .category-box-heading {
