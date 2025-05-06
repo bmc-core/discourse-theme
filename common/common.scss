@@ -732,10 +732,12 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     text-align: center;
 }
 
-tr {
-    &:hover {
-    background: rgba(0,0,0,0.5);   
-    }  
+today {
+    tr {
+        &:hover {
+            background: rgba(0,0,0,0.5);   
+            }  
+    }
 }
 
 .category-boxes-with-topics .category-box-heading {
