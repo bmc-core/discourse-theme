@@ -732,7 +732,7 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     text-align: center;
 }
 
-tr.has-description.no-logo ::after {
+tr {
     &:hover {
     background: rgba(0,0,0,0.5);   
     }  
