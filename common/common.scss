@@ -732,6 +732,10 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     text-align: center;
 }
 
+tr.has-description.no-logo :hover {
+    background: rgba(0,0,0,0.5);
+}
+
 .category-boxes-with-topics .category-box-heading {
     /*category box heading文字*/
     //font: small-caps bold 18px/1 sans-serif;
