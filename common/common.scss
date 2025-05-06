@@ -1073,3 +1073,10 @@ table th {
     background: rgba(var(--secondary-rgb), 0.85);
 }
 
+ul #sidebar-section-content-admin-root :hover {
+    background: rgba(var(--secondary-rgb), 0.85);
+}
+
+.sidebar-section-link-wrapper .sidebar-section-link:hover {
+    background: rgba(var(--secondary-rgb), 0.85);
+}
