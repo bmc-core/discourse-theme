@@ -606,6 +606,14 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
     color: var(--header_primary-low-mid);
 }
 
+.search-term__input {
+    margin-left: .5em;
+}
+
+.header-search--enabled .floating-search-input .search-banner-inner.wrap .search-menu .search-menu-panel, .search-header--visible .floating-search-input .search-banner-inner.wrap .search-menu .search-menu-panel {
+    border-radius: 0 0 5px 5px;
+}
+
 /*搜尋欄*/
 search-menu .search-input, .search-menu-container .search-input {
     position: relative;
