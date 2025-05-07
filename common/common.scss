@@ -590,10 +590,7 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 .search-header--visible .floating-search-input .search-banner-inner.wrap .search-menu .search-input {
     display: flex;
     padding: 0 0 0 2em;
-    border-radius: 20px;
-}
-
-.search-header--visible .floating-search-input .search-banner-inner.wrap .search-menu .search-icon {
+    border-radius: 20px 20px 0 0;
     margin-left: .5em;
 }
 
