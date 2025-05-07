@@ -445,7 +445,7 @@ svg {
     transition: all .3s ease-out;
     &:hover,
     &:focus{
-    background: transparent;
+    background: rgba(0, 0, 0, 0);
     color: #fff;
     .svg-icon {
         fill: var(--tertiary);
@@ -453,7 +453,7 @@ svg {
     }
 }
 
-.discourse-no-touch .small-action .d-icon {
+.discourse-no-touch .small-action button {
     &:hover,
     &:focus {
         background: rgba(0, 0, 0, 0);
