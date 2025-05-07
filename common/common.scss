@@ -263,7 +263,13 @@ li .current {
     &:hover,
     &:focus {
         fill:#FFD306;
-        color: #FFD306;
+    }
+}
+
+.fa.d-icon.d-icon-trash-can {
+    &:hover,
+    &:focus {
+        color:#FFD306;
     }
 }
 
