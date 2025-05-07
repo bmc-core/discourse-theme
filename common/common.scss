@@ -266,7 +266,7 @@ li .current {
     }
 }
 
-button.btn.no-text.btn-icon.post-action-menu__delete.delete.btn-flat {
+.discourse-no-touch nav.post-controls .actions button.delete {
     &:hover,
     &:focus {
         color:#FFD306;
