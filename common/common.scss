@@ -259,6 +259,13 @@ li .current {
     border-radius: 5px;
 }
 
+.fa.d-icon.d-icon-trash-can.svg-icon.svg-string {
+    &:hover,
+    &:focus {
+        fill:#FFD306;
+    }
+}
+
 .btn.no-text {
     .d-icon {
     width: 20px;
