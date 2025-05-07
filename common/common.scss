@@ -459,10 +459,13 @@ svg {
     fill:var(--danger);
 }
 
-.discourse-no-touch .btn-danger .svg-icon :hover {
-    background: rgba(0, 0, 0, 0);
-    fill: #FFD306;
+.discourse-no-touch .small-action button {
+    &:hover,
+    &:focus {
+        background: rgba(0, 0, 0, 0);
+        fill: #FFD306;
     }
+}
 
 .svg-icon, .svg-icon-title {
     &:hover,
