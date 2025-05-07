@@ -453,10 +453,12 @@ svg {
     }
 }
 
-.discourse-no-touch .btn-danger .svg-icon{
-    background: transparent;
-    //fill: var(--header_primary-low-mid);
-    fill:var(--danger);
+.discourse-no-touch .btn-danger button {
+    .svg-icon {
+        background: transparent;
+        //fill: var(--header_primary-low-mid);
+        fill:var(--danger);
+    }
 }
 
 .discourse-no-touch .small-action .d-icon {
