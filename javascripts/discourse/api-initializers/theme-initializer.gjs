@@ -288,7 +288,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });*/
 
 // 移動#new-create-topic按鈕位置到header icon
-document.addEventListener("DOMContentLoaded", function () {
+/*document.addEventListener("DOMContentLoaded", function () {
   const buttonWrapper = document.querySelector(".fk-d-button-tooltip");
   const panel = document.querySelector(".panel");
   const ulIcons = panel?.querySelector(".icons.d-header-icons");
@@ -307,6 +307,27 @@ document.addEventListener("DOMContentLoaded", function () {
     // ✅ 插入到 <ul> 中（可選擇位置）
     ulIcons.insertBefore(newLi, ulIcons.firstChild); // 放第一個
   }
+});*/
+
+api.onPageChange(() => {
+  const buttonWrapper = document.querySelector(".fk-d-button-tooltip");
+  const panel = document.querySelector(".panel");
+  const ulIcons = panel?.querySelector(".icons.d-header-icons");
+
+  if (!buttonWrapper || !panel || !ulIcons) return;
+
+  // 避免重複插入
+  if (ulIcons.querySelector(".header-icon-create-topic")) return;
+
+  const button = buttonWrapper.querySelector("button");
+
+  button.className = "btn no-text btn-icon icon btn-flat";
+
+  const newLi = document.createElement("li");
+  newLi.className = "header-dropdown-toggle header-icon-create-topic";
+  newLi.appendChild(buttonWrapper);
+
+  ulIcons.insertBefore(newLi, ulIcons.firstChild);
 });
 
 //Signup & Login不顯示按鈕
