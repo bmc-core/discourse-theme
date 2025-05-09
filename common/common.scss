@@ -957,6 +957,9 @@ table th {
 }
 
 .small-action.topic-post-visited .topic-post-visited-line .topic-post-visited-message {
+    background-color: rgb(255, 128, 0);
+    color: var(--secondary);
+    border-radius: 5px 5px 0 0;
     padding: 1em .5em;
 }
 
