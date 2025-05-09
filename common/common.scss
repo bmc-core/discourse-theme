@@ -28,6 +28,10 @@ h3#suggested-topics-title {
     border-top: 1px solid var(--header_primary-low-mid);
 }
 
+.rs-component {
+    word-wrap: break-word;
+}
+
 .rs-component h3 { /*文字樣式*/
     text-transform: uppercase;
     font: small-caps bold 18px/1 sans-serif;
@@ -357,6 +361,11 @@ svg.fa.d-icon.d-icon-trash-can.svg-icon.svg-string {
 }*/
 
 /*Heading的Create topic*/
+.fk-d-button-tooltip {
+    display: none;
+  }
+  
+
 #new-create-topic {
    /* background-color: var(--header_background);
     box-sizing: content-box;
@@ -1132,4 +1141,8 @@ ul #sidebar-section-content-admin-root :hover {
 
 .sidebar-section-link-wrapper .sidebar-section-link:hover {
     background: rgba(var(--secondary-rgb), 0.85);
+}
+
+.archetype-private_message .topic-map section {
+    background: rgba(0, 0, 0, 0.3);
 }
