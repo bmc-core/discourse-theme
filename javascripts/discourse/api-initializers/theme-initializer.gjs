@@ -315,7 +315,12 @@ api.onPageChange(() => {
   const ulIcons = panel?.querySelector(".icons.d-header-icons");
 
   if (!buttonWrapper || !panel || !ulIcons) return;
+
+  // 已經插入過就不要再動
   if (ulIcons.querySelector(".header-icon-create-topic")) return;
+
+  // ✅ 在搬移前先暫時隱藏（避免閃爍）
+  buttonWrapper.style.visibility = "hidden";
 
   const button = buttonWrapper.querySelector("button");
   button.className = "btn no-text btn-icon icon btn-flat";
@@ -326,9 +331,12 @@ api.onPageChange(() => {
 
   ulIcons.insertBefore(newLi, ulIcons.firstChild);
 
-  // ✅ 顯示按鈕
-  buttonWrapper.style.display = "";
+  // ✅ 移動完再顯示
+  requestAnimationFrame(() => {
+    buttonWrapper.style.visibility = "visible";
+  });
 });
+
 
 
 //Signup & Login不顯示按鈕
