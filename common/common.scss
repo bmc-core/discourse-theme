@@ -59,7 +59,7 @@ a.tag-topics__topic-link {
     color: var(--tag-text-color);
 }
 
-/*@media screen and (min-width: 767px) {
+@media screen and (min-width: 767px) {
     .tc-right-sidebar {
         display: block;
         //flex-direction: row;
@@ -77,11 +77,11 @@ a.tag-topics__topic-link {
     }
 }
 
-@media screen and (min-width: 767px) {
-    .welcome-banner__title {
-        background-size: 125px;
-    }
-}*/
+// @media screen and (min-width: 767px) {
+//     .welcome-banner__title {
+//         background-size: 125px;
+//     }
+// }
 
 #topic-title h1 {
     text-transform: capitalize;
