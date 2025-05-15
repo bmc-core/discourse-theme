@@ -439,15 +439,20 @@ const currentUser = api.getCurrentUser();
     const DESKTOP_WIDTH = 1024;
 
     function scale() {
-      const screenWidth = window.innerWidth;
-      const scaleRatio = screenWidth / DESKTOP_WIDTH;
+    const screenWidth = window.innerWidth;
+    const DESKTOP_WIDTH = 1024;
 
-      if (screenWidth < DESKTOP_WIDTH) {
-        wrapper.style.transform = `scale(${scaleRatio})`;
-      } else {
-        wrapper.style.transform = "scale(1)";
-      }
+    let scaleRatio = screenWidth / DESKTOP_WIDTH;
+
+    // 設定縮放比例的最小值，例如不小於 0.85
+    if (scaleRatio < 0.85) scaleRatio = 0.85;
+
+    if (screenWidth < DESKTOP_WIDTH) {
+      wrapper.style.transform = `scale(${scaleRatio})`;
+    } else {
+      wrapper.style.transform = "scale(1)";
     }
+  }
 
     window.addEventListener("resize", scale);
     scale();
