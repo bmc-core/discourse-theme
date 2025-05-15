@@ -1146,3 +1146,23 @@ ul #sidebar-section-content-admin-root :hover {
 .archetype-private_message .topic-map section {
     background: rgba(0, 0, 0, 0.3);
 }
+
+/*強制切換桌面布局*/
+  @media screen and (max-width: 1024px) {
+    html {
+      zoom: 0.8; /* 根據你手機大小調整比例 */
+    }
+  }
+
+  /* 強制桌面佈局不被 mobile CSS 隱藏 */
+  .mobile-view {
+    display: none !important;
+  }
+
+  .desktop-view {
+    display: block !important;
+  }
+
+  body {
+    min-width: 1024px;
+  }
