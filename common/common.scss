@@ -440,6 +440,19 @@ button#create-category {
      }
 }
 
+//提示訊息icon
+.fk-d-button-tooltip .fk-d-tooltip__trigger {
+    background: transparent;
+    width: 30px;
+}
+
+span.fk-d-tooltip__icon {
+    color: yellow;
+    .svg-icon {
+        fill:  yellow;
+    }
+}
+
 //救救icon
 li.custom-header-icon-link.header-icon-openbmc-gerrit.vdm.last-custom-icon {
     fill: var(--header_primary-low-mid);
