@@ -369,24 +369,32 @@ api.onPageChange(() => {
 });
 
 // discourse-theme-component: hide edit history button for non-admins
-api.onPageChange(() => {
-  const currentUser = api.getCurrentUser();
-  if (!currentUser || currentUser.admin) return;
 
-  // 使用 MutationObserver 等待 .post-info.edits 出現後再隱藏
-  const observer = new MutationObserver(() => {
-    document.querySelectorAll(".post-info.edits").forEach((el) => {
-      el.style.display = "none";
+export default {
+  name: "hide-edit-history-button",
+
+  initialize(api) {
+    api.onPageChange(() => {
+      const currentUser = api.getCurrentUser();
+      if (!currentUser || currentUser.admin) return;
+
+      // 使用 MutationObserver 隱藏 .post-info.edits
+      const observer = new MutationObserver(() => {
+        document.querySelectorAll(".post-info.edits").forEach((el) => {
+          el.style.display = "none";
+        });
+      });
+
+      observer.observe(document.body, { childList: true, subtree: true });
+
+      // 初次載入時也處理一次
+      document.querySelectorAll(".post-info.edits").forEach((el) => {
+        el.style.display = "none";
+      });
     });
-  });
+  },
+};
 
-  observer.observe(document.body, { childList: true, subtree: true });
-
-  // 初始執行一次（以防已經出現）
-  document.querySelectorAll(".post-info.edits").forEach((el) => {
-    el.style.display = "none";
-  });
-});
 
 
 
