@@ -1162,7 +1162,7 @@ ul #sidebar-section-content-admin-root :hover {
 }
 
 /*強制切換桌面布局*/
-@media screen and (max-width: 1024px) {
+/*@media screen and (max-width: 1024px) {
   html, body {
     width: 1200px;
     overflow-x: auto;
@@ -1193,7 +1193,7 @@ ul #sidebar-section-content-admin-root :hover {
 
   .scale-wrapper {
     transform-origin: top left;
-    width: 1024px;  /* 固定桌面寬度 */
+    width: 1024px;  
   }
 
-}
+}*/

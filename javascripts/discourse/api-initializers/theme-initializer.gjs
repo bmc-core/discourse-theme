@@ -385,7 +385,7 @@ api.onPageChange(() => {
 });
 
 //強迫Desktop介面
-const currentUser = api.getCurrentUser();
+/*const currentUser = api.getCurrentUser();
 
         if (!currentUser) {
           // 還沒登入，不做任何處理
@@ -456,7 +456,9 @@ const currentUser = api.getCurrentUser();
 
     window.addEventListener("resize", scale);
     scale();
-  });
+  });*/
+
+  //當作一切都沒發生吧
 
 });
 
