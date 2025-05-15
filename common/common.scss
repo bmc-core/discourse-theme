@@ -1189,8 +1189,11 @@ ul #sidebar-section-content-admin-root :hover {
   // 確保側邊欄可以顯示（依你需求）
   .sidebar-wrapper {
     display: block !important;
+  }
+
+  .scale-wrapper {
     transform-origin: top left;
-    width: 1024px;
+    width: 1024px;  /* 固定桌面寬度 */
   }
 
 }
