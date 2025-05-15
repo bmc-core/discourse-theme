@@ -103,23 +103,6 @@ a.tag-topics__topic-link {
     padding: 2em 5%; // 簡化 padding-right/left
 }
 
-#main-outlet-wrapper {
-    /*背景半透明*/
-    background:rgba(0,0,0,0.5);
-    padding: 2em 2em 2em 2.2em; // 簡化 padding-right/left
-    //max-width: 90vw; /* 設定隨螢幕大小變更占比 */
-    min-height: 100vh;
-    margin: 0 auto;
-    //box-sizing: border-box;
-    //justify-content: center;
-}
-
-#main-outlet {
-    max-width: 1280px;
-    width: calc(100% - 200px);
-    margin: 0 auto;
-    padding: 1em;
-}
 
 .chat-drawer .chat-drawer-container {
     border-radius: 11px 10px 0 0;
