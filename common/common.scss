@@ -693,16 +693,29 @@ search-menu .search-input, .search-menu-container .search-input {
     margin: 1em auto 2.5em auto;
 }*/
 
+// .welcome-banner__title {
+//     font-size:0px !important;
+//     display:flex;
+//     width: 1000px;      
+//     height: 120px;     
+//     //background-image:url("https://i.imgur.com/agfch4E.png"); 
+//     background-image:url("https://raw.githubusercontent.com/leemorou/Discourse-pic/refs/heads/master/BMCCore%20Discourse%20Logo_%E9%A6%96%E9%A0%81_R5.png");
+//     background-size:500px;
+//     background-position: center;
+//     background-repeat:no-repeat;
+//     margin-inline: auto;
+// }
+
 .welcome-banner__title {
-    font-size:0px !important;
-    display:flex;
-    width: 1000px;      
-    height: 120px;     
-    //background-image:url("https://i.imgur.com/agfch4E.png"); 
-    background-image:url("https://raw.githubusercontent.com/leemorou/Discourse-pic/refs/heads/master/BMCCore%20Discourse%20Logo_%E9%A6%96%E9%A0%81_R5.png");
-    background-size:500px;
+    font-size: 0px !important;
+    display: flex
+;
+    width: clamp(300px, 80vw, 1000px);
+    height: clamp(60px, 9.6vw, 120px);
+    background-image: url(https://raw.githubusercontent.com/leemorou/Discourse-pic/refs/heads/master/BMCCore%20Discourse%20Logo_%E9%A6%96%E9%A0%81_R5.png);
+    background-size: clamp(150px, 80vw, 600px);
     background-position: center;
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     margin-inline: auto;
 }
 
@@ -1197,11 +1210,3 @@ ul #sidebar-section-content-admin-root :hover {
   }
 
 }*/
-
-
-@media screen and (max-width: 1024px){
-    .scale-wrapper {
-    transform-origin: top left;
-    width: 1024px;  
-  }  
-}
