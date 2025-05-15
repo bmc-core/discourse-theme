@@ -384,8 +384,18 @@ api.onPageChange(() => {
   });
 });
 
+//強迫Desktop
 
-});
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    const url = new URL(window.location.href);
+    if (!url.searchParams.has("mobile_view") || url.searchParams.get("mobile_view") !== "0") {
+      url.searchParams.set("mobile_view", "0");
+      window.location.replace(url.toString());
+    }
+  }
+
+
+);
 
 
 
