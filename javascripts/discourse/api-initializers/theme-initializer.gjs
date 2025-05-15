@@ -402,6 +402,27 @@ const currentUser = api.getCurrentUser();
           }
         }
 
+  const MIN_WIDTH = 1024; // 桌面版設計寬度
+  const html = document.documentElement;
+  const body = document.body;
+
+  function applyScale() {
+    const screenWidth = window.innerWidth;
+    const scale = screenWidth / MIN_WIDTH;
+
+    html.style.transform = `scale(${scale})`;
+    html.style.transformOrigin = "top left";
+    html.style.width = MIN_WIDTH + "px";
+    html.style.overflowX = "hidden";
+    html.style.position = "relative";
+  }
+
+  // 初始化與縮放時觸發
+  if (/Mobi|Android/i.test(navigator.userAgent)) {
+    window.addEventListener("load", applyScale);
+    window.addEventListener("resize", applyScale);
+  }
+
 });
 
 
