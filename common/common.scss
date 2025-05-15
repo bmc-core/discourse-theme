@@ -1197,3 +1197,11 @@ ul #sidebar-section-content-admin-root :hover {
   }
 
 }*/
+
+
+@media screen and (max-width: 1024px){
+    .scale-wrapper {
+    transform-origin: top left;
+    width: 1024px;  
+  }  
+}
