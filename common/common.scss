@@ -447,9 +447,9 @@ button#create-category {
 }
 
 span.fk-d-tooltip__icon {
-    color: yellow;
+    color: var(--tertiary);
     .svg-icon {
-        fill:  yellow;
+        fill:  var(--tertiary);
     }
 }
 
