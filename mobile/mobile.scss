@@ -29,6 +29,19 @@ body.static-login .login-welcome {
     padding: 0 1em;
 }
 
+//疊層順序
+.signup-page-cta {
+    z-index: 3;
+}
+
+.login-page-cta {
+    z-index: 3;
+}
+
+#main-outlet {
+    z-index: 2;
+}
+
 /*隱藏Header New topic按鈕*/
 .mobile-view #new-create-topic {
     display:none;
