@@ -60,23 +60,36 @@ a.tag-topics__topic-link {
     color: var(--tag-text-color);
 }
 
-@media screen and (min-width: 767px) {
-    .tc-right-sidebar {
-        display: block;
-        //flex-direction: row;
-        width: 35%;
-        box-sizing: border-box;
-        float: right;
-    }
+// @media screen and (min-width: 767px) {
+//     .tc-right-sidebar {
+//         display: block;
+//         //flex-direction: row;
+//         width: 35%;
+//         box-sizing: border-box;
+//         float: right;
+//     }
     
+// }
+
+// @media screen and (min-width: 767px) {
+//     .tc-right-sidebar+#list-area {
+//         width: calc(65% - 2.5em);
+//         float: left;
+//     }
+// }
+
+.tc-right-sidebar {
+  display: block;
+  width: 35%;
+  box-sizing: border-box;
+  float: right;
 }
 
-@media screen and (min-width: 767px) {
-    .tc-right-sidebar+#list-area {
-        width: calc(65% - 2.5em);
-        float: left;
-    }
+.tc-right-sidebar + #list-area {
+  width: calc(65% - 2.5em);
+  float: left;
 }
+
 
 // @media screen and (min-width: 767px) {
 //     .welcome-banner__title {
@@ -582,6 +595,7 @@ nav.post-controls .actions .double-button button.button-count+.toggle-like:hover
 
 .search-menu-container.menu-panel-results {
     width: 100%;
+    max-width: 300px;
 }
 
 .search-header--visible .floating-search-input {
