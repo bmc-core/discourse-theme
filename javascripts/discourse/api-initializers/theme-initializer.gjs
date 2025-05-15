@@ -387,20 +387,20 @@ api.onPageChange(() => {
 //強迫Desktop介面
 const currentUser = api.getCurrentUser();
 
-  if (!currentUser) {
-    // 未登入者不執行
-    return;
-  }
+        if (!currentUser) {
+          // 還沒登入，不做任何處理
+          return;
+        }
 
-  if (/Mobi|Android/i.test(navigator.userAgent)) {
-    const url = new URL(window.location.href);
+        if (/Mobi|Android/i.test(navigator.userAgent)) {
+          const url = new URL(window.location.href);
 
-    // 如果已經是 ?mobile_view=0 就不跳轉
-    if (!url.searchParams.has("mobile_view") || url.searchParams.get("mobile_view") !== "0") {
-      url.searchParams.set("mobile_view", "0");
-      window.location.replace(url.toString());
-    }
-  }
+          // 避免重複跳轉
+          if (url.searchParams.get("mobile_view") !== "0") {
+            url.searchParams.set("mobile_view", "0");
+            window.location.replace(url.toString());
+          }
+        }
 
 });
 
