@@ -18,6 +18,17 @@ body.static-login .login-welcome {
     width: 80vw;
 }
 
+.body-page {
+    max-width: unset;
+}
+
+.wrap .contents {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 0 1em;
+}
+
 /*隱藏Header New topic按鈕*/
 .mobile-view #new-create-topic {
     display:none;
