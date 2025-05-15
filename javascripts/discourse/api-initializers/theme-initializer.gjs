@@ -421,8 +421,7 @@ api.onPageChange(() => {
   if (/Mobi|Android/i.test(navigator.userAgent)) {
     window.addEventListener("load", applyScale);
     window.addEventListener("resize", applyScale);
-  }*/
-  //當作一切都沒發生吧
+  }
 
 //用 JS 動態包裹 .container.list-container 並縮放
   document.addEventListener("DOMContentLoaded", () => {
@@ -458,6 +457,10 @@ api.onPageChange(() => {
     window.addEventListener("resize", scale);
     scale();
   });
+
+  */
+  //當作一切都沒發生吧
+  
 });
 
 
