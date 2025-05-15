@@ -28,19 +28,6 @@ h3#suggested-topics-title {
     border-top: 1px solid var(--header_primary-low-mid);
 }
 
-.cooked h3, .d-editor-preview h3 {
-    font-size: var(--font-up-1-rem);
-    margin-left: 1em;
-}
-
-h1+p, h2+p, h3+p, h4+p, h5+p, h6+p {
-    margin-top: 0;
-    margin-left: 2em;
-}
-
-li {
-    padding: 0.5em 0;
-}
 
 .rs-component {
     word-wrap: break-word;
