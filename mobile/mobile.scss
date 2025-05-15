@@ -94,6 +94,10 @@ body.static-login .login-welcome {
     color: var(--header_primary-low-mid);
 }
 
+.categories-list .category-list td {
+    color: #a6a6a6;
+}
+
 /*我還沒搞懂*/
 .category-topic-link.visited a.title:not(.badge-notification) {
     color: var(--primary-high);
