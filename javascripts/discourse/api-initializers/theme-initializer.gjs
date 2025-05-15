@@ -366,6 +366,25 @@ api.onPageChange(() => {
     });
   });
 
+  // discourse-theme-component: hide edit history button for non-admins
+api.onPageChange(() => {
+  const currentUser = api.getCurrentUser();
+  if (!currentUser || currentUser.admin) return;
+
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll(".post-info.edits").forEach((el) => {
+      el.style.display = "none";
+    });
+  });
+
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  document.querySelectorAll(".post-info.edits").forEach((el) => {
+    el.style.display = "none";
+  });
+});
+
+
 });
 
 
