@@ -374,17 +374,17 @@ api.decorateCookedElement((elem) => {
   const currentUser = api.getCurrentUser();
   if (!currentUser || currentUser.admin) return;
 
-  // 隱藏「貼文」右下角的鉛筆 icon（編輯紀錄）
-  elem.querySelectorAll(".post-controls .show-revisions").forEach((el) => {
+  // 隱藏 post 編輯紀錄按鈕（鉛筆圖示）——根據你提供的 DOM 結構
+  elem.querySelectorAll(".post-info.edits").forEach((el) => {
     el.style.display = "none";
   });
 
-  // 若你的站點允許編輯標題，也可選擇隱藏這個（可保留）
+  // 若有允許修改標題，可選擇是否也隱藏這個按鈕
   elem.querySelectorAll(".edit-topic").forEach((el) => {
     el.style.display = "none";
   });
 
-  // ✅ 不隱藏 .post-edits，保留「最後編輯於」文字
+  // ✅ 保留 .post-edits，不影響「最後編輯於」的小字
 }, { id: 'hide-edit-history-for-non-admins' });
 
 
