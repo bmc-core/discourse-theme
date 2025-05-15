@@ -1146,3 +1146,34 @@ ul #sidebar-section-content-admin-root :hover {
 .archetype-private_message .topic-map section {
     background: rgba(0, 0, 0, 0.3);
 }
+
+/*強制切換桌面布局*/
+@media screen and (max-width: 1024px) {
+  html, body {
+    width: 1200px;
+    overflow-x: auto;
+  }
+
+  #main-outlet-wrapper {
+    min-width: 1024px;
+  }
+
+  .wrap {
+    min-width: 1024px;
+  }
+
+  .container {
+    min-width: 1024px;
+  }
+
+  // 隱藏一些行動功能
+  .mobile-nav,
+  .footer-nav {
+    display: none !important;
+  }
+
+  // 確保側邊欄可以顯示（依你需求）
+  .sidebar-wrapper {
+    display: block !important;
+  }
+}
