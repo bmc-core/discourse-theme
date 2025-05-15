@@ -3,12 +3,6 @@
     width: unset;
 }
 
-body #main-outlet-wrapper {
-    grid-template-areas: none;
-    grid-template-columns: none;
-    transition: grid-template-columns .5s ease;
-}
-
 #main-outlet-wrapper {
     box-sizing: border-box;
     width: 100%;
