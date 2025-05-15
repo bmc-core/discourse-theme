@@ -444,8 +444,8 @@ const currentUser = api.getCurrentUser();
 
     let scaleRatio = screenWidth / DESKTOP_WIDTH;
 
-    // 設定縮放比例的最小值，例如不小於 0.85
-    if (scaleRatio < 0.85) scaleRatio = 0.85;
+    // 設定縮放比例的最小值，例如不小於 0.75
+    if (scaleRatio < 0.75) scaleRatio = 0.75;
 
     if (screenWidth < DESKTOP_WIDTH) {
       wrapper.style.transform = `scale(${scaleRatio})`;
