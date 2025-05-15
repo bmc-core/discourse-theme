@@ -423,6 +423,17 @@ const currentUser = api.getCurrentUser();
     window.addEventListener("resize", applyScale);
   }
 
+document.addEventListener("DOMContentLoaded", () => {
+  const mainOutlet = document.getElementById("main-outlet-wrapper");
+  if (mainOutlet) {
+    const wrapper = document.createElement("div");
+    wrapper.className = "scale-wrapper";
+    mainOutlet.parentNode.insertBefore(wrapper, mainOutlet);
+    wrapper.appendChild(mainOutlet);
+  }
+});
+
+
 });
 
 
