@@ -367,3 +367,18 @@ api.onPageChange(() => {
   });
 
 });
+
+// discourse-theme-component: hide edit history button for non-admins
+// hides the pencil icon (edit history) for non-admin users
+
+api.onPageChange(() => {
+  const currentUser = api.getCurrentUser();
+  if (!currentUser || currentUser.admin) return;
+
+  // Hide post edit history buttons (pencil icon)
+  document.querySelectorAll(".edit-topic, .post-controls .show-revisions").forEach((el) => {
+    el.style.display = "none";
+  });
+
+});
+
