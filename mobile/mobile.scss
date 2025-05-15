@@ -3,6 +3,25 @@
     width: unset;
 }
 
+body #main-outlet-wrapper {
+    grid-template-areas: none;
+    grid-template-columns: none;
+    transition: grid-template-columns .5s ease;
+}
+
+#main-outlet-wrapper {
+    box-sizing: border-box;
+    width: 100%;
+    display: grid;
+    grid-template-areas: none;
+    grid-template-rows: none;
+    grid-template-columns: none;
+    gap: 0;
+}
+
+body.static-login .login-welcome {
+    width: 70vw;
+}
 
 /*隱藏Header New topic按鈕*/
 .mobile-view #new-create-topic {
