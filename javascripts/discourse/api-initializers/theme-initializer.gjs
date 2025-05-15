@@ -369,16 +369,23 @@ api.onPageChange(() => {
 });
 
 // discourse-theme-component: hide edit history button for non-admins
-// hides the pencil icon (edit history) for non-admin users
 
-api.onPageChange(() => {
+api.decorateCookedElement((elem) => {
   const currentUser = api.getCurrentUser();
   if (!currentUser || currentUser.admin) return;
 
-  // Hide post edit history buttons (pencil icon)
-  document.querySelectorAll(".edit-topic, .post-controls .show-revisions").forEach((el) => {
+  // 隱藏「貼文」右下角的鉛筆 icon（編輯紀錄）
+  elem.querySelectorAll(".post-controls .show-revisions").forEach((el) => {
     el.style.display = "none";
   });
 
-});
+  // 若你的站點允許編輯標題，也可選擇隱藏這個（可保留）
+  elem.querySelectorAll(".edit-topic").forEach((el) => {
+    el.style.display = "none";
+  });
+
+  // ✅ 不隱藏 .post-edits，保留「最後編輯於」文字
+}, { id: 'hide-edit-history-for-non-admins' });
+
+
 
