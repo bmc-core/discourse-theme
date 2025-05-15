@@ -369,23 +369,24 @@ api.onPageChange(() => {
 });
 
 // discourse-theme-component: hide edit history button for non-admins
-
-api.decorateCookedElement((elem) => {
+api.onPageChange(() => {
   const currentUser = api.getCurrentUser();
   if (!currentUser || currentUser.admin) return;
 
-  // 隱藏 post 編輯紀錄按鈕（鉛筆圖示）——根據你提供的 DOM 結構
-  elem.querySelectorAll(".post-info.edits").forEach((el) => {
-    el.style.display = "none";
+  // 使用 MutationObserver 等待 .post-info.edits 出現後再隱藏
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll(".post-info.edits").forEach((el) => {
+      el.style.display = "none";
+    });
   });
 
-  // 若有允許修改標題，可選擇是否也隱藏這個按鈕
-  elem.querySelectorAll(".edit-topic").forEach((el) => {
+  observer.observe(document.body, { childList: true, subtree: true });
+
+  // 初始執行一次（以防已經出現）
+  document.querySelectorAll(".post-info.edits").forEach((el) => {
     el.style.display = "none";
   });
-
-  // ✅ 保留 .post-edits，不影響「最後編輯於」的小字
-}, { id: 'hide-edit-history-for-non-admins' });
+});
 
 
 
