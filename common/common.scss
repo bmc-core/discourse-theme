@@ -1189,12 +1189,8 @@ ul #sidebar-section-content-admin-root :hover {
   // 確保側邊欄可以顯示（依你需求）
   .sidebar-wrapper {
     display: block !important;
+    transform-origin: top left;
+    width: 1024px;
   }
-
-  .scale-wrapper {
-  transform-origin: top left;
-  transform: scale(0.75);  // 這個比例你可以用 JS 動態計算調整
-  width: 1024px;
-}
 
 }

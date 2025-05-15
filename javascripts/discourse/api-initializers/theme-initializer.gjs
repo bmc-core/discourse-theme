@@ -423,16 +423,35 @@ const currentUser = api.getCurrentUser();
     window.addEventListener("resize", applyScale);
   }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const mainOutlet = document.getElementById("main-outlet-wrapper");
-  if (mainOutlet) {
+//用 JS 動態包裹 .container.list-container 並縮放
+  document.addEventListener("DOMContentLoaded", () => {
+    const container = document.querySelector(".container.list-container");
+    if (!container) return;
+
+    // 建立包裹層
     const wrapper = document.createElement("div");
     wrapper.className = "scale-wrapper";
-    mainOutlet.parentNode.insertBefore(wrapper, mainOutlet);
-    wrapper.appendChild(mainOutlet);
-  }
-});
 
+    // 把 container 包進去
+    container.parentNode.insertBefore(wrapper, container);
+    wrapper.appendChild(container);
+
+    const DESKTOP_WIDTH = 1024;
+
+    function scale() {
+      const screenWidth = window.innerWidth;
+      const scaleRatio = screenWidth / DESKTOP_WIDTH;
+
+      if (screenWidth < DESKTOP_WIDTH) {
+        wrapper.style.transform = `scale(${scaleRatio})`;
+      } else {
+        wrapper.style.transform = "scale(1)";
+      }
+    }
+
+    window.addEventListener("resize", scale);
+    scale();
+  });
 
 });
 
