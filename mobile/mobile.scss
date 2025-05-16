@@ -176,6 +176,26 @@ background:var(--header_background);
     flex-direction: column;
 }
 
+.mobile-view .topic-owner .onscreen-post {
+    padding-bottom: 0;
+    margin: 1em 0;
+}
+
+.topic-avatar {
+    margin-left: 10px;
+}
+
+span.relative-date {
+    margin-right: 14px;
+}
+
+.topic-post>article {
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.post-voting-answers-header {
+    transform: scale(0.9);
+}
 
 /*文字編輯器*/
 #reply-control .submit-panel .save-or-cancel .cancel .svg-icon {
