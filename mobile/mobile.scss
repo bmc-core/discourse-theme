@@ -130,6 +130,12 @@ background:var(--header_background);
   // border-bottom: 15px solid rgba(0,0,0,0); 
 //}
 
+.category-list-item.category {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
 .topic-list .topic-item-stats {
     padding-bottom: 1em;
 }
@@ -139,7 +145,8 @@ background:var(--header_background);
 }
 
 .categories-list .category-list td {
-    color: #a6a6a6;
+    color: #D0D0D0;
+    padding: 12px 10px;
 }
 
 /*我還沒搞懂*/
