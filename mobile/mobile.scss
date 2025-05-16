@@ -45,11 +45,11 @@ body.static-login .login-welcome {
     padding: 0 .55em;
 }
 
+//聊天室的LV
 .chat-message-separator-date+.chat-message-separator__line-container {
     padding: 20px var(--scrollbarWidth) 20px var(--scrollbarWidth);
     box-sizing: border-box;
-    background: var(--secondary);
-;
+    background: var(--header_background);
 }
 
 //導行列
