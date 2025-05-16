@@ -74,7 +74,7 @@ background:var(--header_background);
 .breadcrumbs__links {
     display: flex;
     list-style: none;
-    margin: 2em;
+    margin: 1em 0;
 }
 
 //疊層順序
@@ -88,6 +88,7 @@ background:var(--header_background);
 
 #main-outlet {
     z-index: 2;
+    margin: 0 2.5em;
 }
 
 /*隱藏Header New topic按鈕*/
