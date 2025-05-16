@@ -50,9 +50,13 @@ body.static-login .login-welcome {
 //last vist
 .topic-list .topic-list-item-separator .topic-list-data span {
     position: relative;
-    background-color: var(--danger-medium);
+    background-color: var(--danger-medium) !important;
     color: var(--secondary);
     padding: 0 .55em;
+}
+
+.topic-list .topic-list-data {
+    padding: 15px 0;
 }
 
 //聊天室的LV
@@ -158,9 +162,19 @@ background:var(--header_background);
     color: var(--header_primary-low-mid);
 }
 
+.topic-list-item.visited .topic-list-data a.title:not(.badge-notification) {
+    color: #D0D0D0;
+}
+
 .badge-category__wrapper .badge-category__name {
     color: #FFF;
 }
+
+/*Topic 內頁*/
+.regular.contents {
+    flex-direction: column;
+}
+
 
 /*文字編輯器*/
 #reply-control .submit-panel .save-or-cancel .cancel .svg-icon {
