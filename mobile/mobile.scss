@@ -137,7 +137,7 @@ background:var(--header_background);
 
 .container.list-container {
     padding: 0;
-    
+
 }
 
 .category-list-item.category {
@@ -202,6 +202,10 @@ span.relative-date {
 
 .post-voting-answers-header {
     transform: scale(0.9);
+}
+
+.topic-body .cooked {
+    margin: 1em 0;
 }
 
 .topic-map__contents .topic-map__stats.--single-stat button {
