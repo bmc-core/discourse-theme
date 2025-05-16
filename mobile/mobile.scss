@@ -29,6 +29,36 @@ body.static-login .login-welcome {
     padding: 0 1em;
 }
 
+//提示icon
+.fk-d-button-tooltip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+}
+
+//last vist
+.topic-list .topic-list-item-separator .topic-list-data span {
+    position: relative;
+    background-color: var(--danger-medium);
+    color: var(--secondary);
+    padding: 0 .55em;
+}
+
+.chat-message-separator-date+.chat-message-separator__line-container {
+    padding: 20px var(--scrollbarWidth) 20px var(--scrollbarWidth);
+    box-sizing: border-box;
+    background: var(--secondary);
+;
+}
+
+//導行列
+.breadcrumbs__links {
+    display: flex;
+    list-style: none;
+    margin: 2em;
+}
+
 //疊層順序
 .signup-page-cta {
     z-index: 3;
