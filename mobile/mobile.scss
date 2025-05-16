@@ -190,11 +190,22 @@ span.relative-date {
 }
 
 .topic-post>article {
-    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, .2);
+    border-radius: 5px;
 }
 
 .post-voting-answers-header {
     transform: scale(0.9);
+}
+
+.topic-map__contents .topic-map__stats.--single-stat button {
+    margin: 0.5em;
+}
+
+.post-voting-comments-menu {
+    font-size: var(--font-down-1);
+    margin: 0.5em 0;
 }
 
 /*文字編輯器*/
