@@ -53,7 +53,7 @@ body.static-login .login-welcome {
 }
 
 .chat-channel {
-background: (--header_background);
+background:var(--header_background);
 }
 
 //導行列
