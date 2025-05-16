@@ -208,6 +208,23 @@ span.relative-date {
     margin: 0.5em 0;
 }
 
+#topic-progress-wrapper {
+    justify-content: center;
+    width: 100%;
+}
+
+nav#topic-progress {
+    width: -webkit-fill-available;
+    border: 2px solid var(--tertiary) !important;
+    border-radius: 20px;
+    justify-items: center;
+    margin: 1.5em 0;
+}
+
+#topic-progress-wrapper #topic-progress .bg {
+    border-radius: 20px;
+}
+
 /*文字編輯器*/
 #reply-control .submit-panel .save-or-cancel .cancel .svg-icon {
     background-color: #272727;
