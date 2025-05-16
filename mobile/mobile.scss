@@ -15,7 +15,17 @@
 }
 
 body.static-login .login-welcome {
-    width: 80vw;
+    width: 100vw;
+    background-color: rgba(50,50,100,0.1);
+    border: 1px solid var(--primary-low);
+    text-align: center;
+    padding: 2em;
+    box-shadow: var(--shadow-card);
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .body-page {
