@@ -2,6 +2,11 @@ button#create-topic {
     display: none;
 }
 /*首頁*/
+.wrap {
+    max-width: 90vw;
+    padding: 2em 5%; // 簡化 padding-right/left
+}
+
 #main-outlet-wrapper {
     /*背景半透明*/
     background:rgba(0,0,0,0.5);

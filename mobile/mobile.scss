@@ -62,6 +62,10 @@ body.static-login .login-welcome {
 
 /*首頁Heaader*/
 
+.welcome-banner__title {
+    background-size: clamp(150px, 80vw, 500px);
+}
+
 //隱藏Header New topic按鈕
 // .mobile-view #new-create-topic {
 //     display:none;
