@@ -90,11 +90,32 @@ body.static-login .login-welcome {
     display: none;
 }
 
+.list-controls .navigation-container {
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+}
+
 //Navigation 按鈕排列&樣式
-.navigation-controls {
+#navigation-bar {
     display: flex;
+    flex-wrap: wrap;
+    margin: 0;
+    margin-bottom: var(--nav-space);
+    margin-right: auto;
+    align-items: center;
+    gap: 0.5em;
+    flex: 1;
+    min-width: 80%;
+
+.navigation-controls {
     flex-flow: row-reverse;
     width: -webkit-fill-available;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5em;
+    flex: 1;
 }
 
 .navigation-controls .btn {
