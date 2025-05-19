@@ -750,7 +750,7 @@ search-menu .search-input, .search-menu-container .search-input {
 }
 
 .navigation-controls>*:not(:last-child) {
-    margin-right: 4em;
+    display: none;
 }
 
 /*導航*/

@@ -89,13 +89,16 @@ body.static-login .login-welcome {
 }
 
 .navigation-controls .btn {
-    width: 100%;
     height: 40px;
 }
 
 .navigation-controls .btn.no-text .d-icon{
     width: 20px;
     height: 20px;
+}
+
+.navigation-container {
+    padding: 0;
 }
 
 .select-kit.single-select.dropdown-select-box {
