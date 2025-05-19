@@ -39,6 +39,10 @@ button#create-topic {
     color:#FFD306;
 } */
 
+/*搜尋欄Header常駐*/
+.d-header>.wrap .contents {
+    justify-content: space-between;
+}
 
 /*----------------分隔線--------------------*/
 //Topic 內文樣式
