@@ -384,6 +384,25 @@ api.onPageChange(() => {
   });
 });
 
+//LOGO加超連結
+ api.onPageChange(() => {
+    const title = document.querySelector('.welcome-banner__title');
+    if (title && !title.closest('a.welcome-banner__link')) {
+      // 自動抓取 Discourse 首頁網址
+      const homeUrl = window.location.origin + '/Catrgories'; // 或 '/latest' 看你首頁設定
+
+      const link = document.createElement('a');
+      link.href = homeUrl;
+      link.className = 'welcome-banner__link';
+      link.setAttribute('aria-label', '回到首頁');
+      link.style.display = 'block';
+      link.style.textDecoration = 'none';
+
+      title.parentNode.insertBefore(link, title);
+      link.appendChild(title);
+    }
+  });
+  
 //強迫Desktop介面
 /*const currentUser = api.getCurrentUser();
 
