@@ -66,8 +66,7 @@ body.static-login .login-welcome {
 // .mobile-view #new-create-topic {
 //     display:none;
 // }
-
-button#create-topic {
+.d-header #site-logo {
     display: none;
 }
 
@@ -77,6 +76,11 @@ button#create-topic {
 }
 
 /*首頁的Navgation*/
+
+.list-controls .container #create-topic {
+    display: none;
+}
+
 //Navigation 按鈕排列&樣式
 .navigation-controls {
     display: flex;
@@ -221,7 +225,7 @@ nav#topic-progress {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin-top: 6px;
+    //margin-top: 6px;
 }
 
 //last vist
