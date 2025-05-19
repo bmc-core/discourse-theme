@@ -389,7 +389,7 @@ api.onPageChange(() => {
     const title = document.querySelector('.welcome-banner__title');
     if (title && !title.closest('a.welcome-banner__link')) {
       // 自動抓取 Discourse 首頁網址
-      const homeUrl = window.location.origin + '/Catrgories'; // 或 '/latest' 看你首頁設定
+      const homeUrl = window.location.origin + '/'; // 或 '/latest' 看你首頁設定
 
       const link = document.createElement('a');
       link.href = homeUrl;
@@ -402,7 +402,7 @@ api.onPageChange(() => {
       link.appendChild(title);
     }
   });
-  
+
 //強迫Desktop介面
 /*const currentUser = api.getCurrentUser();
 
