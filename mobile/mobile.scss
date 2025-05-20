@@ -261,6 +261,18 @@ body.static-login .login-welcome {
 
 /*Topic 內頁*/
 //Topic顯示方式
+h3#suggested-topics-title {
+    padding: 1em 0em 0em 0em;
+    text-transform: uppercase;
+    font-size: 24px;
+    text-align: center;
+    border-top: 1px solid var(--header_primary-low-mid);
+}
+
+h3.more-topics__browse-more {
+    margin-top: .5rem;
+}
+
 .topic-list {
     border-collapse: separate;
     border-spacing: 0 10px;
@@ -269,6 +281,11 @@ body.static-login .login-welcome {
 .topic-list .topic-list-data {
     padding: 15px 0;
     border-radius: 5px;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.more-topics__container .more-topics__list .topic-list-body .topic-list-item:first-child td {
+    padding-top: 15px;
 }
 
 .pull-left {
@@ -387,4 +404,8 @@ button.btn.no-text.btn-icon.btn-flat.sidebar-footer-actions-button.sidebar-foote
 
 .hamburger-panel .revamped {
     background: #222222;
+}
+
+.hamburger-panel .revamped .sidebar-footer-wrapper .sidebar-footer-container {
+    background: var(--active_color);
 }
