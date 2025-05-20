@@ -261,13 +261,6 @@ body.static-login .login-welcome {
 
 /*Topic 內頁*/
 //Topic顯示方式
-// SCSS：針對每個分類，設置變數 --category-color 並套用 border 顏色
-@for $i from 1 through 67 {
-  .topic-list-item.category-#{$i} {
-    --category-color: var(--category-#{$i}-color);
-  }
-}
-
 .topic-list-item td:first-of-type, .topic-post {
     border-left: 5px solid var(--category-color);
 }
