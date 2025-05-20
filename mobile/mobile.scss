@@ -413,6 +413,10 @@ nav#topic-progress {
     padding: 0 .55em;
 }
 
+.post-notice {
+    background-color: var(--tertiary-400);
+}
+
 //聊天室的LV
 .chat-message-separator-date+.chat-message-separator__line-container {
     padding: 20px var(--scrollbarWidth) 20px var(--scrollbarWidth);
