@@ -165,6 +165,7 @@ body.static-login .login-welcome {
 }
 
 //Navigation 按鈕排列&樣式
+
 #navigation-bar {
     display: flex;
     flex-wrap: wrap;
@@ -259,6 +260,30 @@ body.static-login .login-welcome {
 }
 
 /*Topic 內頁*/
+//Topic顯示方式
+// SCSS：針對每個分類，設置變數 --category-color 並套用 border 顏色
+@for $i from 1 through 67 {
+  .topic-list-item.category-#{$i} {
+    --category-color: var(--category-#{$i}-color);
+  }
+}
+
+.topic-list-item td:first-of-type, .topic-post {
+    border-left: 5px solid var(--category-color);
+
+.topic-list {
+    border-collapse: separate;
+    border-spacing: 0 5px;
+}
+
+.topic-list .topic-list-data {
+    padding: 15px 0;
+}
+
+.pull-left {
+    padding: 0 1em;
+}
+
 .regular.contents {
     flex-direction: column;
 }
@@ -338,10 +363,6 @@ nav#topic-progress {
     padding: 0 .55em;
 }
 
-.topic-list .topic-list-data {
-    padding: 15px 0;
-}
-
 //聊天室的LV
 .chat-message-separator-date+.chat-message-separator__line-container {
     padding: 20px var(--scrollbarWidth) 20px var(--scrollbarWidth);
@@ -356,4 +377,23 @@ background:var(--header_background);
 /*後台*/
 .user-content {
     border-radius: 10px;
+}
+
+//sidebar
+
+button.btn.no-text.btn-icon.btn-flat.sidebar-footer-actions-button.sidebar-footer-actions-toggle-mobile-view {
+    display: none; /*手機版side bar隱藏切換按鈕*/
+}
+
+.sidebar-footer-wrapper {
+    background: transparent;
+    top: 0;
+}
+
+.sidebar-footer-wrapper .sidebar-footer-container {
+    background: transparent;
+}
+
+.hamburger-panel .revamped {
+    background: #222222;
 }
