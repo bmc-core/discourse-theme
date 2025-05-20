@@ -40,7 +40,7 @@ body.static-login .login-welcome {
 }
 
 //在手機版Before Header增加回首頁的LOGO並隱藏原本的welcome-banner__title
-.welcome-banner__title {
+.welcome-banner {
     display: none;
 }
 
@@ -49,6 +49,9 @@ body.static-login .login-welcome {
     justify-content: center; /* 水平置中 */
     align-items: center;
     padding: 10px 0;
+    background: var(--header_background);
+    height: 5em;
+    border-bottom: 1.5px solid var(--active-color);
 }
 
 .custom-bmcc-logo {
