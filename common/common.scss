@@ -786,6 +786,11 @@ search-menu .search-input, .search-menu-container .search-input {
     padding-top: 0.5em;
 }
 
+.topic-list {
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
 .topic-statuses .topic-status {
     color: var(--header_primary-low-mid);
 }
