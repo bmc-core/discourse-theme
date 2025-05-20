@@ -64,7 +64,7 @@ body.static-login .login-welcome {
     cursor: pointer;
 }
 
-//導行列
+//component導行列
 .breadcrumbs__links {
     display: flex;
     list-style: none;
@@ -86,7 +86,6 @@ body.static-login .login-welcome {
 }
 
 /*首頁Heaader*/
-
 .welcome-banner__title {
     background-size: clamp(150px, 80vw, 500px);
 }
@@ -110,6 +109,12 @@ body.static-login .login-welcome {
 
 
 /*首頁的Navgation*/
+
+.before-header-panel-outlet+.panel {
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+}
 
 .list-controls .container #create-topic {
     display: none;
