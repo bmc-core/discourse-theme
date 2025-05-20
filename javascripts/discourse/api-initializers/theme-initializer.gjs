@@ -503,7 +503,7 @@ api.onPageChange(() => {
 
       const td = item.querySelector('td:first-of-type');
       if (td && !td.style.borderLeft) {
-        td.style.borderLeft = `8px solid ${color}`;
+        td.style.borderLeft = `5px solid ${color}`;
       }
     });
   }
