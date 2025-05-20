@@ -126,6 +126,42 @@ body.static-login .login-welcome {
     gap: 5px;
 }
 
+//ICON
+.icons {
+  .btn.btn-icon,
+  .btn.icon {
+    width: 35px;
+    height: 35px;
+    padding: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    
+
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+
+.d-header-icons .icon {   
+    width: -webkit-fill-available;
+}
+
+#current-user {
+  .avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+}
+
+#new-create-topic .d-icon {
+    width: 25px;
+    height: 25px;
+}
+
 //Navigation 按鈕排列&樣式
 #navigation-bar {
     display: flex;
