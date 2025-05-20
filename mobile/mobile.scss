@@ -271,15 +271,14 @@ body.static-login .login-welcome {
 
 .category-boxes-with-topics .category-box {
     border-left-width: 7.5px;
-    width: 100px;
-    height: 100px;
+    height: 2em;
     border-radius: 50%;
-    overflow: hidden;
+    // overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1);
+    // background: rgba(255, 255, 255, 0.1);
 }
 
 .category-boxes-with-topics .category-box-heading {
