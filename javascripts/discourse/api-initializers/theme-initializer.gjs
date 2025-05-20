@@ -478,6 +478,45 @@ api.onPageChange(() => {
 
   */
   //當作一切都沒發生吧
+
+    // 抓分類顏色
+  let categoryColorMap = {};
+
+  fetch('/site.json')
+    .then(res => res.json())
+    .then(data => {
+      data.categories.forEach(cat => {
+        categoryColorMap[cat.slug] = `#${cat.color}`;
+      });
+    });
+
+  // 對 topic-list-item 套用左邊框
+  function applyCategoryBorders() {
+    document.querySelectorAll('.topic-list-item').forEach(item => {
+      const classList = Array.from(item.classList);
+      const categoryClass = classList.find(c => c.startsWith('category-'));
+      if (!categoryClass) return;
+
+      const slug = categoryClass.replace('category-', '');
+      const color = categoryColorMap[slug];
+      if (!color) return;
+
+      const td = item.querySelector('td:first-of-type');
+      if (td && !td.style.borderLeft) {
+        td.style.borderLeft = `8px solid ${color}`;
+      }
+    });
+  }
+
+  // 初始載入 or 每次切換頁面都觸發
+  api.onPageChange(() => {
+    // 等待 DOM 畫出來
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        applyCategoryBorders();
+      }, 100); // 小延遲確保 topic list 已渲染完成
+    });
+  });
   
 });
 

@@ -261,17 +261,14 @@ body.static-login .login-welcome {
 
 /*Topic 內頁*/
 //Topic顯示方式
-.topic-list-item td:first-of-type, .topic-post {
-    border-left: 5px solid var(--category-color);
-}
-
 .topic-list {
     border-collapse: separate;
-    border-spacing: 0 5px;
+    border-spacing: 0 10px;
 }
 
 .topic-list .topic-list-data {
     padding: 15px 0;
+    border-radius: 5px;
 }
 
 .pull-left {
