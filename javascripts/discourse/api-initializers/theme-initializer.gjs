@@ -384,24 +384,23 @@ api.onPageChange(() => {
   });
 });
 
-//LOGO加超連結
- api.onPageChange(() => {
-    const title = document.querySelector('.welcome-banner__title');
-    if (title && !title.closest('a.welcome-banner__link')) {
-      // 自動抓取 Discourse 首頁網址
-      const homeUrl = window.location.origin + '/'; // 或 '/latest' 看你首頁設定
+//Before Header LOGO加超連結
+api.onPageChange(() => {
+  const logo = document.querySelector('.custom-bmcc-logo');
+  if (logo && !logo.closest('a.custom-bmcc-logo-link')) {
+    const homeUrl = window.location.origin + '/'; // 或 '/latest'
 
-      const link = document.createElement('a');
-      link.href = homeUrl;
-      link.className = 'welcome-banner__link';
-      link.setAttribute('aria-label', '回到首頁');
-      link.style.display = 'block';
-      link.style.textDecoration = 'none';
+    const link = document.createElement('a');
+    link.href = homeUrl;
+    link.className = 'custom-bmcc-logo-link';
+    link.setAttribute('aria-label', '回到首頁');
+    link.style.display = 'inline-block';
 
-      title.parentNode.insertBefore(link, title);
-      link.appendChild(title);
-    }
-  });
+    logo.parentNode.insertBefore(link, logo);
+    link.appendChild(logo);
+  }
+});
+
 
 //強迫Desktop介面
 /*const currentUser = api.getCurrentUser();

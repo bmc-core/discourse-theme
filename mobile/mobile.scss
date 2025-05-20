@@ -39,6 +39,28 @@ body.static-login .login-welcome {
     padding: 0 1em;
 }
 
+//在手機版Before Header增加回首頁的LOGO並隱藏原本的welcome-banner__title
+.welcome-banner__title {
+    display: none;
+}
+
+.logo-wrapper {
+    display: flex;
+    justify-content: center; /* 水平置中 */
+    align-items: center;
+    padding: 10px 0;
+}
+
+.custom-bmcc-logo {
+    width: clamp(300px, 80vw, 1000px);
+    height: auto;
+}
+
+.custom-bmcc-logo,
+.custom-bmcc-logo-link {
+    cursor: pointer;
+}
+
 //導行列
 .breadcrumbs__links {
     display: flex;
