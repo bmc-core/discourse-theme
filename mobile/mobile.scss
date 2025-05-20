@@ -375,6 +375,12 @@ span.relative-date {
     width: 100%;
 }
 
+#topic-progress-wrapper .btn
+Specificity: (1,1,0)
+ {
+    display: none; //隱藏多餘的按鈕
+}
+
 nav#topic-progress {
     width: -webkit-fill-available;
     border: 2px solid var(--tertiary) !important;
