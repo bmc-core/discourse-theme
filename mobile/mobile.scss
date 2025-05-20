@@ -109,6 +109,10 @@ body.static-login .login-welcome {
 
 
 /*首頁的Navgation*/
+.d-header .home-logo-wrapper-outlet {
+    display: none;
+}
+
 .header-cloak {
     background-color: rgba(0, 0, 0, 0);
 }
@@ -118,9 +122,9 @@ body.static-login .login-welcome {
     justify-content: center;
 }
 
-.list-controls .container #create-topic {
-    display: none;
-}
+// .list-controls .container #create-topic {
+//     display: none;
+// }
 
 .list-controls .navigation-container {
     align-items: center;
