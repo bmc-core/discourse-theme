@@ -260,6 +260,49 @@ body.static-login .login-welcome {
 }
 
 /*Topic 內頁*/
+//Subcategory
+.category-boxes, .category-boxes-with-topics {
+    display: inline-flex;
+}
+
+.category-boxes-with-topics {
+    grid-template-columns: none;
+}
+
+.category-boxes-with-topics .category-box {
+    border-left-width: 7.5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 5%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+
+.category-boxes-with-topics .category-box-heading {
+    overflow-wrap: break-word;
+    margin: 0 !important;
+    padding-top: 1.5em;
+}
+
+.category-boxes-with-topics .category-box-heading a[href] {
+    font-size: var(--font-down-2);
+}
+
+.category-boxes .category-box-inner, .category-boxes-with-topics .category-box-inner {
+    box-sizing: content-box;
+    width: 90%;
+    display: flex;
+    padding: 1em;
+    border-width: 1px;
+    border-left-width: 0px;
+    border-style: solid;
+    border-radius: 50%;
+    background-color: transparent;
+}
+
 //Topic顯示方式
 h3#suggested-topics-title {
     padding: 1em 0em 0em 0em;
