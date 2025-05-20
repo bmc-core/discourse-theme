@@ -791,6 +791,10 @@ search-menu .search-input, .search-menu-container .search-input {
     border-spacing: 0 10px;
 }
 
+.topic-list .topic-list-data {
+    border-radius: 5px;
+}
+
 .topic-statuses .topic-status {
     color: var(--header_primary-low-mid);
 }
