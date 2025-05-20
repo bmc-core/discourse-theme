@@ -428,6 +428,29 @@ nav#topic-progress {
 background:var(--header_background);
 }
 
+.has-full-page-chat .c-header .c-heading {
+    display: none;
+}
+
+html.has-full-page-chat body #main-outlet .full-page-chat {
+    min-height: 0;
+    position: fixed;
+    top: 161px;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+}
+
+//移除Forum文字
+.has-full-page-chat .c-header .back-to-forum {
+    font-size: 0;
+}
+
+.has-full-page-chat .c-header .back-to-forum .d-icon {
+    color: var(--primary);
+    font-size: var(--font-up-3-rem);
+}
+
 /*後台*/
 .user-content {
     border-radius: 10px;
