@@ -109,11 +109,13 @@ body.static-login .login-welcome {
 
 
 /*首頁的Navgation*/
+.header-cloak {
+    background-color: rgba(0, 0, 0, 0);
+}
 
-.before-header-panel-outlet+.panel {
-    left: 50%;
-    transform: translateX(-50%);
-    position: absolute;
+.before-header-panel-outlet+.panel.before-header-panel-outlet+.panel {
+    width: 100%;
+    justify-content: center;
 }
 
 .list-controls .container #create-topic {
