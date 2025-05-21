@@ -537,24 +537,31 @@ api.onPageChange(() => {
   });
 
   //一般用戶隱藏post voting頭像
-function toggleVisibility() {
+const checkAndToggle = () => {
         const currentUser = api.getCurrentUser();
-        const el = document.querySelector('.small-user-list-content');
-        if (!el) return;
+        document.querySelectorAll('.small-user-list-content').forEach(el => {
+          if (currentUser && currentUser.admin) {
+            el.style.display = "";
+          } else {
+            el.style.display = "none";
+          }
+        });
+      };
 
-        if (currentUser && currentUser.admin) {
-          el.style.display = "";
-        } else {
-          el.style.display = "none";
-        }
-      }
-
-      // 頁面初次載入檢查
-      toggleVisibility();
-
-      // SPA 頁面切換時再檢查一次
+      // 頁面初始和跳頁時都跑一次
+      checkAndToggle();
       api.onPageChange(() => {
-        toggleVisibility();
+        checkAndToggle();
+      });
+
+      // 監聽 body 下面 DOM 變化，元素新增時判斷一次
+      const observer = new MutationObserver(() => {
+        checkAndToggle();
+      });
+
+      observer.observe(document.body, {
+        childList: true,
+        subtree: true,
       });
 
 
