@@ -480,49 +480,63 @@ api.onPageChange(() => {
   //當作一切都沒發生吧
 
 /*Categories topic list自動套樣式*/
-  let categoryColorMapById = {};
+  let categorySlugToColor = {};
 
-  // 取得分類顏色資料（ID → 顏色）
   fetch('/site.json')
     .then(res => res.json())
     .then(data => {
       data.categories.forEach(cat => {
-        categoryColorMapById[cat.id] = `#${cat.color}`;
+        categorySlugToColor[cat.slug] = `#${cat.color}`;
       });
     });
 
-  function waitForElement(selector, callback, timeout = 5000) {
-    const intervalTime = 100;
-    let timeElapsed = 0;
-    const interval = setInterval(() => {
-      const el = document.querySelector(selector);
-      if (el) {
-        clearInterval(interval);
-        callback(el);
-      } else if ((timeElapsed += intervalTime) >= timeout) {
-        clearInterval(interval);
-      }
-    }, intervalTime);
-  }
-
   function applyCategoryBorders() {
     document.querySelectorAll('.topic-list-item').forEach(item => {
-      const categoryId = item.getAttribute('data-category-id');
-      const color = categoryColorMapById[categoryId];
-      if (!color) return;
+      const slugClass = Array.from(item.classList).find(c => c.startsWith('category-'));
+      if (!slugClass) return;
 
-      const td = item.querySelector('td:first-of-type');
-      if (td && !td.style.borderLeft) {
-        td.style.borderLeft = `5px solid ${color}`;
+      // 嘗試先用完整 slug 直接找
+      const slug = slugClass.replace('category-', '');
+      if (categorySlugToColor[slug]) {
+        setBorder(item, categorySlugToColor[slug]);
+        return;
+      }
+
+      // 如果找不到，就分段後找第一個有的
+      const parts = slug.split('-');
+      for (const part of parts) {
+        if (categorySlugToColor[part]) {
+          setBorder(item, categorySlugToColor[part]);
+          return;
+        }
       }
     });
+  }
+
+  function setBorder(item, color) {
+    const td = item.querySelector('td');
+    if (td && !td.style.borderLeft) {
+      td.style.borderLeft = `5px solid ${color}`;
+    }
+  }
+
+  function waitAndApply() {
+    let tries = 0;
+    const interval = setInterval(() => {
+      if (document.querySelector('.topic-list-item')) {
+        clearInterval(interval);
+        applyCategoryBorders();
+      } else if (++tries > 30) {
+        clearInterval(interval);
+      }
+    }, 200);
   }
 
   api.onPageChange(() => {
-    waitForElement('.topic-list-item', () => {
-      applyCategoryBorders();
-    });
+    waitAndApply();
   });
+</script>
+
   
 });
 
