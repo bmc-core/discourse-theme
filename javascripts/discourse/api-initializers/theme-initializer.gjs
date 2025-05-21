@@ -481,7 +481,6 @@ api.onPageChange(() => {
 
  let categoryColorMap = {};
 
-  // 抓分類資料
   fetch('/site.json')
     .then(res => res.json())
     .then(data => {
@@ -511,18 +510,27 @@ api.onPageChange(() => {
       if (!categoryClass) return;
 
       const fullSlug = categoryClass.replace('category-', '');
-      const slugParts = fullSlug.split('-');
 
-      // 找出第一個有顏色定義的分類
-      const slug = slugParts.find(part => categoryColorMap[part]);
-      if (!slug) return;
+      // 1. 直接對應（主分類）
+      if (categoryColorMap[fullSlug]) {
+        setBorder(item, categoryColorMap[fullSlug]);
+        return;
+      }
 
-      const color = categoryColorMap[slug];
-      const td = item.querySelector('td:first-of-type');
-      if (td && !td.style.borderLeft) {
-        td.style.borderLeft = `5px solid ${color}`;
+      // 2. 嘗試拆解（子分類）
+      const parts = fullSlug.split('-');
+      const found = parts.find(part => categoryColorMap[part]);
+      if (found) {
+        setBorder(item, categoryColorMap[found]);
       }
     });
+  }
+
+  function setBorder(item, color) {
+    const td = item.querySelector('td:first-of-type');
+    if (td && !td.style.borderLeft) {
+      td.style.borderLeft = `5px solid ${color}`;
+    }
   }
 
   api.onPageChange(() => {
