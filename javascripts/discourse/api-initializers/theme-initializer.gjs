@@ -535,7 +535,6 @@ api.onPageChange(() => {
   api.onPageChange(() => {
     waitAndApply();
   });
-</script>
 
   
 });
