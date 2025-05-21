@@ -479,9 +479,9 @@ api.onPageChange(() => {
   */
   //當作一切都沒發生吧
 
-    // 抓分類顏色
-  let categoryColorMap = {};
+ let categoryColorMap = {};
 
+  // 抓分類資料
   fetch('/site.json')
     .then(res => res.json())
     .then(data => {
@@ -490,17 +490,34 @@ api.onPageChange(() => {
       });
     });
 
-  // 對 topic-list-item 套用左邊框
+  function waitForElement(selector, callback, timeout = 5000) {
+    const intervalTime = 100;
+    let timeElapsed = 0;
+    const interval = setInterval(() => {
+      const el = document.querySelector(selector);
+      if (el) {
+        clearInterval(interval);
+        callback(el);
+      } else if ((timeElapsed += intervalTime) >= timeout) {
+        clearInterval(interval);
+      }
+    }, intervalTime);
+  }
+
   function applyCategoryBorders() {
     document.querySelectorAll('.topic-list-item').forEach(item => {
       const classList = Array.from(item.classList);
       const categoryClass = classList.find(c => c.startsWith('category-'));
       if (!categoryClass) return;
 
-      const slug = categoryClass.replace('category-', '');
-      const color = categoryColorMap[slug];
-      if (!color) return;
+      const fullSlug = categoryClass.replace('category-', '');
+      const slugParts = fullSlug.split('-');
 
+      // 找出第一個有顏色定義的分類
+      const slug = slugParts.find(part => categoryColorMap[part]);
+      if (!slug) return;
+
+      const color = categoryColorMap[slug];
       const td = item.querySelector('td:first-of-type');
       if (td && !td.style.borderLeft) {
         td.style.borderLeft = `5px solid ${color}`;
@@ -508,13 +525,9 @@ api.onPageChange(() => {
     });
   }
 
-  // 初始載入 or 每次切換頁面都觸發
   api.onPageChange(() => {
-    // 等待 DOM 畫出來
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        applyCategoryBorders();
-      }, 100); // 小延遲確保 topic list 已渲染完成
+    waitForElement('.topic-list-item', () => {
+      applyCategoryBorders();
     });
   });
   
