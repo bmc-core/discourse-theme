@@ -479,13 +479,15 @@ api.onPageChange(() => {
   */
   //當作一切都沒發生吧
 
- let categoryColorMap = {};
+/*Categories topic list自動套樣式*/
+  let categoryColorMapById = {};
 
+  // 取得分類顏色資料（ID → 顏色）
   fetch('/site.json')
     .then(res => res.json())
     .then(data => {
       data.categories.forEach(cat => {
-        categoryColorMap[cat.slug] = `#${cat.color}`;
+        categoryColorMapById[cat.id] = `#${cat.color}`;
       });
     });
 
@@ -505,32 +507,15 @@ api.onPageChange(() => {
 
   function applyCategoryBorders() {
     document.querySelectorAll('.topic-list-item').forEach(item => {
-      const classList = Array.from(item.classList);
-      const categoryClass = classList.find(c => c.startsWith('category-'));
-      if (!categoryClass) return;
+      const categoryId = item.getAttribute('data-category-id');
+      const color = categoryColorMapById[categoryId];
+      if (!color) return;
 
-      const fullSlug = categoryClass.replace('category-', '');
-
-      // 1. 直接對應（主分類）
-      if (categoryColorMap[fullSlug]) {
-        setBorder(item, categoryColorMap[fullSlug]);
-        return;
-      }
-
-      // 2. 嘗試拆解（子分類）
-      const parts = fullSlug.split('-');
-      const found = parts.find(part => categoryColorMap[part]);
-      if (found) {
-        setBorder(item, categoryColorMap[found]);
+      const td = item.querySelector('td:first-of-type');
+      if (td && !td.style.borderLeft) {
+        td.style.borderLeft = `5px solid ${color}`;
       }
     });
-  }
-
-  function setBorder(item, color) {
-    const td = item.querySelector('td:first-of-type');
-    if (td && !td.style.borderLeft) {
-      td.style.borderLeft = `5px solid ${color}`;
-    }
   }
 
   api.onPageChange(() => {
