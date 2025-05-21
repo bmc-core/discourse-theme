@@ -537,27 +537,27 @@ api.onPageChange(() => {
   });
 
   //一般用戶隱藏post voting頭像
-const toggleVisibility = () => {
+function toggleVisibility() {
         const currentUser = api.getCurrentUser();
-        const elements = document.querySelectorAll('.small-user-list-content');
-        elements.forEach(el => {
-          if (currentUser && currentUser.admin) {
-            el.style.display = "";
-          } else {
-            el.style.display = "none";
-          }
-        });
-      };
+        const el = document.querySelector('.small-user-list-content');
+        if (!el) return;
 
-      // 初始頁面載入
+        if (currentUser && currentUser.admin) {
+          el.style.display = "";
+        } else {
+          el.style.display = "none";
+        }
+      }
+
+      // 頁面初次載入檢查
       toggleVisibility();
 
-      // 每次頁面切換時都檢查一次
+      // SPA 頁面切換時再檢查一次
       api.onPageChange(() => {
         toggleVisibility();
       });
 
-      
+
 });
 
 
