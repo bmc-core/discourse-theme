@@ -564,6 +564,21 @@ const checkAndToggle = () => {
         subtree: true,
       });
 
+//手機版sidebar Visible
+api.decorateWidget("header:after-logo", (helper) => {
+        return helper.h("div.mobile-sidebar-hook", {
+          attributes: { "data-mobile-sidebar": "true" }
+        });
+      });
+ const element = document.querySelector(".mobile-sidebar-hook");
+    if (element && window.innerWidth <= 767) {
+      // 動態插入 block 內容（你也可以改為 fetch block，或用 HTML）
+      element.innerHTML = `
+        <div class="mobile-sidebar-container">
+          <p style="margin: 1em 0; font-weight: bold;">📌 手機版 Sidebar 內容</p>
+        </div>
+      `;
+    }      
 
 });
 
