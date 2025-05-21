@@ -537,19 +537,27 @@ api.onPageChange(() => {
   });
 
   //一般用戶隱藏post voting頭像
-  api.onPageChange(() => {
+const toggleVisibility = () => {
         const currentUser = api.getCurrentUser();
         const elements = document.querySelectorAll('.small-user-list-content');
         elements.forEach(el => {
           if (currentUser && currentUser.admin) {
-            el.style.display = '';
+            el.style.display = "";
           } else {
-            el.style.display = 'none';
+            el.style.display = "none";
           }
-          });
-          });
+        });
+      };
 
-  
+      // 初始頁面載入
+      toggleVisibility();
+
+      // 每次頁面切換時都檢查一次
+      api.onPageChange(() => {
+        toggleVisibility();
+      });
+
+      
 });
 
 
